@@ -9,9 +9,9 @@ namespace AllHomework
 			resultCalculations = ((5 * valueA) + (valueB * valueB)) / (valueB - valueA);
 			return resultCalculations;
 		}
-		public static int GetVariableOfTheEquation(int valueA, int valueB, int valueC)
+		public static double GetVariableOfTheEquation(double valueA, double valueB, double valueC)
 		{
-			int valueX;
+			double valueX;
 			valueX = (valueC - valueB) / valueA;
 			return valueX;
 		}
