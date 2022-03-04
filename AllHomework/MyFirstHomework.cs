@@ -3,9 +3,9 @@ namespace AllHomework
 {
 	static class MyFirstHomework
 	{
-		public static int GetResultOfTheEquation(int valueA, int valueB)
+		public static double GetResultOfTheEquation(double valueA, double valueB)
 		{
-			int resultCalculations;
+			double resultCalculations;
 			resultCalculations = ((5 * valueA) + (valueB * valueB)) / (valueB - valueA);
 			return resultCalculations;
 		}
@@ -15,10 +15,10 @@ namespace AllHomework
 			valueX = (valueC - valueB) / valueA;
 			return valueX;
 		}
-		public static void GetEquationOfTheLine(int coordinateX1, int coordinateX2, int coordinateY1, int coordinateY2)
+		public static void GetEquationOfTheLine(double coordinateX1, double coordinateX2, double coordinateY1, double coordinateY2)
 		{
-			int valueA = (coordinateY2 - coordinateY1) / (coordinateX2 - coordinateX1);
-			int valueB = coordinateY1 - valueA * coordinateX1;
+			double valueA = (coordinateY2 - coordinateY1) / (coordinateX2 - coordinateX1);
+			double valueB = coordinateY1 - valueA * coordinateX1;
 			Console.WriteLine($"Уравнение прямой: Y={valueA}*X+{valueB}");
 		}
 	}

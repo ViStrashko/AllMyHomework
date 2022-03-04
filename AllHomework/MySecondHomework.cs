@@ -3,9 +3,9 @@ namespace AllHomework
 {
 	static class MySecondHomework
 	{
-		public static int GetSumOrDifferenceOrProductOfNumbers(int valueA, int valueB)
+		public static double GetSumOrDifferenceOrProductOfNumbers(double valueA, double valueB)
 		{
-			int result = 0;
+			double result = 0;
 			if (valueA > valueB)
 			{
 				result = valueA + valueB;
@@ -20,7 +20,7 @@ namespace AllHomework
 			}
 			return result;
 		}
-		public static void GetQuarterCoordinatesPoint(int coordinateX, int coordinateY)
+		public static void GetQuarterCoordinatesPoint(double coordinateX, double coordinateY)
 		{
 			if (coordinateX > 0 && coordinateY > 0)
 			{
@@ -38,26 +38,37 @@ namespace AllHomework
 			{
 				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '4'");
 			}
-		}
-		public static void GetTwodigitNumberInWords(int number)
-		{
-			if (number > 10 && number < 20)
+			else if (coordinateX == 0 && coordinateY != 0)
 			{
-				switch (number)
-				{
-					case 11: Console.WriteLine("одинадцать"); break;
-					case 12: Console.WriteLine("двенадцать"); break;
-					case 13: Console.WriteLine("тринадцать"); break;
-					case 14: Console.WriteLine("четырнадцать"); break;
-					case 15: Console.WriteLine("пятнадцать"); break;
-					case 16: Console.WriteLine("шеснадцать"); break;
-					case 17: Console.WriteLine("семнадцать"); break;
-					case 18: Console.WriteLine("восемьнадцать"); break;
-					case 19: Console.WriteLine("девятнадцать"); break;
-				}
-				Console.ReadKey();
-				return;
+				Console.WriteLine($"Точка с координатами X,Y лежит на оси OY");
 			}
+			else if (coordinateY == 0 && coordinateX != 0)
+			{
+				Console.WriteLine($"Точка с координатами X,Y лежит на оси OX");
+			}
+			else if (coordinateX == 0 && coordinateY == 0)
+			{
+				Console.WriteLine($"Точка с координатами X,Y является началом координат");
+			}
+		}
+		static int GetNumbersFromElevenToNineteen(int number)
+		{
+			switch (number)
+			{
+				case 11: Console.WriteLine("одинадцать"); break;
+				case 12: Console.WriteLine("двенадцать"); break;
+				case 13: Console.WriteLine("тринадцать"); break;
+				case 14: Console.WriteLine("четырнадцать"); break;
+				case 15: Console.WriteLine("пятнадцать"); break;
+				case 16: Console.WriteLine("шеснадцать"); break;
+				case 17: Console.WriteLine("семнадцать"); break;
+				case 18: Console.WriteLine("восемьнадцать"); break;
+				case 19: Console.WriteLine("девятнадцать"); break;
+			}
+			return number;
+		}
+		static int GetNumbersFromTwentyToNinetyNine(int number)
+		{
 			switch (number / 10)
 			{
 				case 1: Console.WriteLine("деcять"); break;
@@ -69,8 +80,11 @@ namespace AllHomework
 				case 7: Console.Write("семьдесят "); break;
 				case 8: Console.Write("восемьдесят "); break;
 				case 9: Console.Write("девяносто "); break;
-				default: break;
 			}
+			return number;
+		}
+		static int GetNumbersFromOneToNine(int number)
+		{
 			if (number % 10 >= 1)
 			{
 				switch (number % 10)
@@ -84,8 +98,20 @@ namespace AllHomework
 					case 7: Console.WriteLine("семь"); break;
 					case 8: Console.WriteLine("восемь"); break;
 					case 9: Console.WriteLine("девять"); break;
-					default: break;
 				}
+			}
+			return number;
+		}
+		public static void GetTwodigitNumberInWords(int number)
+		{
+			if (number > 10 && number < 20)
+			{
+				GetNumbersFromElevenToNineteen(number);
+			}
+			else
+			{
+				GetNumbersFromTwentyToNinetyNine(number);
+				GetNumbersFromOneToNine(number);
 			}
 		}
 	}

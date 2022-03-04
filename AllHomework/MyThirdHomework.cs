@@ -3,29 +3,44 @@ namespace AllHomework
 {
 	static class MyThirdHomework
 	{
-		public static int GetNumberOfDegree(int valueA, int valueB)
-		{
-			int result = 1;
-			for (int i = 0; i < valueB; i++)
-			{
-				result = result * valueA;
-			}
-			return result;
-		}
-		public static int GetQuantityNumbersSmallerSquare(int valueA)
+		public static double GetNumberOfDegree(double valueA, double valueB)
 		{
 			int i = 0;
-			while (i * i < valueA-1)
+			double tmp=0;
+			double rezult = 1;
+			while (i < Math.Abs(valueB))
+			{
+				rezult = rezult * valueA;
+				i++;
+			}
+			if (valueB > 0)
+			{
+				tmp=rezult;
+			}
+			else if (valueB < 0 && valueA != 0)
+			{
+				tmp = (1 / rezult);
+			}
+			else if (valueB == 0)
+			{
+				tmp = 1;
+			}
+			return tmp;
+		}
+		public static double GetQuantityNumbersSmallerSquare(double valueA)
+		{
+			int i = 0;
+			while (i * i < valueA)
 			{
 				i++;
 			}
-			return i;
+			return (i-1);
 		}
 		public static void GetLargestDivisorOfNumber(int valueA)
 		{
-			for (int i = valueA; i > 0; i--)
+			for (int i = Math.Abs(valueA); i > 0; i--)
 			{
-				if (valueA % i == 0 && i != valueA)
+				if (valueA % i == 0 && i != valueA && i != Math.Abs(valueA))
 				{
 					Console.WriteLine($"Наибольший делитель числа {valueA}: {i}");
 					break;
@@ -53,47 +68,53 @@ namespace AllHomework
 			int numberFibonacci1 = 1;
 			int numberFibonacci2 = 1;
 			int sum = 0;
+			int tmp = 0;
 			int i = 3;
+			while (valueN >= i)
+			{
+				sum = numberFibonacci1 + numberFibonacci2;
+				numberFibonacci1 = numberFibonacci2;
+				numberFibonacci2 = sum;
+				i++;
+			}
 			if (valueN == 1)
 			{
-				sum=numberFibonacci1;
+				tmp=numberFibonacci1;
 			}
 			else if (valueN == 2)
 			{
-				sum=numberFibonacci2;
+				tmp=numberFibonacci2;
 			}
-			else
+			else if (valueN >= 3)
 			{
-				while (valueN >= i)
-				{
-					sum = numberFibonacci1 + numberFibonacci2;
-					numberFibonacci1 = numberFibonacci2;
-					numberFibonacci2 = sum;
-					i++;
-				}
+				tmp=sum;
 			}
 			return sum;
 		}
 		public static int GetGreatestCommonDivisorNumbers(int valueA, int valueB)
 		{
-			while (valueA != 0 && valueB != 0)
+			int tmp1;
+			int tmp2;
+			tmp1 = Math.Abs(valueA);
+			tmp2 = Math.Abs(valueB);
+			while (tmp1 != 0 && tmp2 != 0)
 			{
-				if (valueA > valueB)
+				if (tmp1 > tmp2)
 				{
-					valueA -= valueB;
+					tmp1 -= tmp2;
 				}
 				else
 				{
-					valueB -= valueA;
+					tmp2 -= tmp1;
 				}
 			}
-			return valueA;
+			return tmp1;
 		}
 		static double F(double n)
 		{
 			return n * n * n;
 		}
-		public static double GetNumberMethodOfHalfDivision(double number)
+		public static double GetNumberMethodOfHalfDivision(int number)
 		{
 			double tmp = 0;
 			double e = 0.01;
@@ -116,39 +137,49 @@ namespace AllHomework
 		}
 		public static long GetNumberOfOddDigits(long number)
 		{
-			long tmp;
+			long tmp1;
+			long tmp2;
 			long countNumber = 0;
-			while (number >= 1)
+			tmp2 = Math.Abs(number);
+			while (tmp2 >= 1)
 			{
-				tmp = number % 10;
-				if (tmp % 2 == 1)
+				tmp1 = tmp2 % 10;
+				if (tmp1 % 2 == 1)
 				{
 					countNumber++;
 				}
-				number = number / 10;
+				tmp2 = tmp2 / 10;
 			}
 			return countNumber;
 		}
 		public static void GetMirrorNumber(long number)
 		{
-			long tmp;
-			while (number >= 1)
+			long tmp1;
+			long tmp2;
+			tmp2 = Math.Abs(number);
+			if (number < 0)
 			{
-				tmp = number % 10;
-				Console.Write(tmp);
-				number = number / 10;
+				Console.Write("-");
+			}
+			while (tmp2 >= 1)
+			{
+				tmp1 = tmp2 % 10;
+				Console.Write(tmp1);
+				tmp2 = tmp2 / 10;
 			}
 		}
 		public static bool GetAlignmentOfDigitsOfNumbers(int number1, int number2)
 		{
 			int tmp1;
 			int tmp2;
+			int tmp3;
 			int secondNumber;
-			bool isEqualNumner = false;
-			while (number1 >= 1)
+			bool isEqualNumner = false;;
+			tmp3 = Math.Abs(number1);
+			while (tmp3 >= 1)
 			{
-				tmp1 = number1 % 10;
-				secondNumber = number2;
+				tmp1 = tmp3 % 10;
+				secondNumber = Math.Abs(number2);
 				while (secondNumber >= 1)
 				{
 					tmp2 = secondNumber % 10;
@@ -158,7 +189,7 @@ namespace AllHomework
 					}
 					secondNumber = secondNumber / 10;
 				}
-				number1 = number1 / 10;
+				tmp3 = tmp3 / 10;
 			}
 				return isEqualNumner;
 		}
