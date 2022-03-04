@@ -22,10 +22,22 @@ namespace AllHomework
 		}
 		public static void GetQuarterCoordinatesPoint(int coordinateX, int coordinateY)
 		{
-			if (coordinateX > 0 && coordinateY > 0) { Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '1'"); }
-			else if (coordinateX < 0 && coordinateY > 0) { Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '2'"); }
-			else if (coordinateX < 0 && coordinateY < 0) { Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '3'"); }
-			else if (coordinateX > 0 && coordinateY < 0) { Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '4'"); }
+			if (coordinateX > 0 && coordinateY > 0)
+			{
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '1'");
+			}
+			else if (coordinateX < 0 && coordinateY > 0)
+			{
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '2'");
+			}
+			else if (coordinateX < 0 && coordinateY < 0)
+			{
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '3'");
+			}
+			else if (coordinateX > 0 && coordinateY < 0)
+			{
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '4'");
+			}
 		}
 		public static void GetTwodigitNumberInWords(int number)
 		{

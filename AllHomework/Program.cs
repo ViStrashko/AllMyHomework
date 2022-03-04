@@ -47,6 +47,8 @@ namespace AllHomework
 
 			MyThirdHomework.GetMirrorNumber(123456789);
 
+			bool pitting = MyThirdHomework.GetAlignmentOfDigitsOfNumbers(1111, 555);
+			Console.WriteLine(pitting);
 			Console.ReadKey();
 		}
 	}

@@ -139,5 +139,28 @@ namespace AllHomework
 				number = number / 10;
 			}
 		}
+		public static bool GetAlignmentOfDigitsOfNumbers(int number1, int number2)
+		{
+			int tmp1;
+			int tmp2;
+			int secondNumber;
+			bool isEqualNumner = false;
+			while (number1 >= 1)
+			{
+				tmp1 = number1 % 10;
+				secondNumber = number2;
+				while (secondNumber >= 1)
+				{
+					tmp2 = secondNumber % 10;
+					if (tmp1 == tmp2)
+					{
+						isEqualNumner = true;
+					}
+					secondNumber = secondNumber / 10;
+				}
+				number1 = number1 / 10;
+			}
+				return isEqualNumner;
+		}
 	}
 }
