@@ -15,12 +15,38 @@ namespace AllHomework
 
 			MyFirstHomework.GetEquationOfTheLine (1, 5, 10, 2);
 
-			int rezult1 = MySecondHomework.GetSumOrDifferenceOrProductOfNumber(7, 4);
+			int rezult1 = MySecondHomework.GetSumOrDifferenceOrProductOfNumbers(7, 4);
 			Console.WriteLine(rezult1);
 
 			MySecondHomework.GetQuarterCoordinatesPoint(-1, 8);
 
 			MySecondHomework.GetTwodigitNumberInWords(55);
+
+			int number = MyThirdHomework.GetNumberOfDegree(5, 3);
+			Console.WriteLine(number);
+
+			int numbers = MyThirdHomework.GetQuantityNumbersSmallerSquare(5);
+			Console.WriteLine(numbers);
+
+			MyThirdHomework.GetLargestDivisorOfNumber(55);
+
+			int sum = MyThirdHomework.GetSumNumbersDivisibleBy7(15, 1);
+			Console.WriteLine(sum);
+
+			int numberFibonacci = MyThirdHomework.GetNumberFibonacciSeries(9);
+			Console.WriteLine(numberFibonacci);
+
+			int commonDivisor = MyThirdHomework.GetGreatestCommonDivisorNumbers(8, 32);
+			Console.WriteLine(commonDivisor);
+
+			double number1 = MyThirdHomework.GetNumberMethodOfHalfDivision(10);
+			Console.WriteLine(number1);
+
+			long oddNumbers = MyThirdHomework.GetNumberOfOddDigits(1051651648555);
+			Console.WriteLine(oddNumbers);
+
+			MyThirdHomework.GetMirrorNumber(123456789);
+
 			Console.ReadKey();
 		}
 	}

@@ -3,7 +3,7 @@ namespace AllHomework
 {
 	static class MySecondHomework
 	{
-		public static int GetSumOrDifferenceOrProductOfNumber(int valueA, int valueB)
+		public static int GetSumOrDifferenceOrProductOfNumbers(int valueA, int valueB)
 		{
 			int result = 0;
 			if (valueA > valueB)
@@ -63,15 +63,15 @@ namespace AllHomework
 			{
 				switch (number % 10)
 				{
-					case 1: Console.Write("один"); break;
-					case 2: Console.Write("два"); break;
-					case 3: Console.Write("три"); break;
-					case 4: Console.Write("четыре"); break;
-					case 5: Console.Write("пять"); break;
-					case 6: Console.Write("шесть"); break;
-					case 7: Console.Write("семь"); break;
-					case 8: Console.Write("восемь"); break;
-					case 9: Console.Write("девять"); break;
+					case 1: Console.WriteLine("один"); break;
+					case 2: Console.WriteLine("два"); break;
+					case 3: Console.WriteLine("три"); break;
+					case 4: Console.WriteLine("четыре"); break;
+					case 5: Console.WriteLine("пять"); break;
+					case 6: Console.WriteLine("шесть"); break;
+					case 7: Console.WriteLine("семь"); break;
+					case 8: Console.WriteLine("восемь"); break;
+					case 9: Console.WriteLine("девять"); break;
 					default: break;
 				}
 			}
