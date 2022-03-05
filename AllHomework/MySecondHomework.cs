@@ -24,31 +24,31 @@ namespace AllHomework
 		{
 			if (coordinateX > 0 && coordinateY > 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '1'");
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: {1}");
 			}
 			else if (coordinateX < 0 && coordinateY > 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '2'");
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: {2}");
 			}
 			else if (coordinateX < 0 && coordinateY < 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '3'");
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: {3}");
 			}
 			else if (coordinateX > 0 && coordinateY < 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти '4'");
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: {4}");
 			}
 			else if (coordinateX == 0 && coordinateY != 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y лежит на оси OY");
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: лежит на оси OY");
 			}
 			else if (coordinateY == 0 && coordinateX != 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y лежит на оси OX");
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: лежит на оси OX");
 			}
 			else if (coordinateX == 0 && coordinateY == 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y является началом координат");
+				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: является началом координат");
 			}
 		}
 		static int GetNumbersFromElevenToNineteen(int number)
@@ -112,6 +112,56 @@ namespace AllHomework
 			{
 				GetNumbersFromTwentyToNinetyNine(number);
 				GetNumbersFromOneToNine(number);
+			}
+		}
+		public static void GetAscendingNumbers(double valueA, double valueB, double valueC)
+		{
+			if (valueA < valueB && valueB < valueC)
+			{
+				Console.WriteLine($"{valueA}, {valueB}, {valueC}");
+			}
+			else if (valueA < valueC && valueC < valueB)
+			{
+				Console.WriteLine($"{valueA}, {valueC}, {valueB}");
+			}
+			else if (valueB < valueA && valueA < valueC)
+			{
+				Console.WriteLine($"{valueB}, {valueA}, {valueC}");
+			}
+			else if (valueB < valueC && valueC < valueA)
+			{
+				Console.WriteLine($"{valueB}, {valueC}, {valueA}");
+			}
+			else if (valueC < valueA && valueA < valueB)
+			{
+				Console.WriteLine($"{valueC}, {valueA}, {valueB}");
+			}
+			else if (valueC < valueB && valueB < valueA)
+			{
+				Console.WriteLine($"{valueC}, {valueB}, {valueA}");
+			}
+		}
+
+//Methods with two conclusions
+
+		public static void GetSolutionOfTheEquation(double valueA, double valueB, double valueC, out double x1, out double x2)
+		{
+			x1 = 0;
+			x2 = 0;
+			double discriminant;
+			discriminant = valueB * valueB - (4 * valueA * valueC);
+			if (discriminant > 0)
+			{
+				x1 = ((-valueB - Math.Sqrt(discriminant)) / (2 * valueA));
+				x2 = ((-valueB + Math.Sqrt(discriminant)) / (2 * valueA));
+			}
+			else if (discriminant == 0)
+			{
+				x1=(-valueB) / (2 * valueA);
+			}
+			else if (discriminant < 0)
+			{
+				Console.WriteLine($"Решение уравнения: Корней нет");
 			}
 		}
 	}

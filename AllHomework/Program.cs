@@ -22,6 +22,8 @@ namespace AllHomework
 
 			MySecondHomework.GetTwodigitNumberInWords(25);
 
+			MySecondHomework.GetAscendingNumbers(10.8, 0, -5);
+
 			double number = MyThirdHomework.GetNumberOfDegree(-2.5, -3);
 			Console.WriteLine(number);
 
@@ -49,7 +51,33 @@ namespace AllHomework
 
 			bool pitting = MyThirdHomework.GetAlignmentOfDigitsOfNumbers(-1234, -4217);
 			Console.WriteLine(pitting);
-			Console.ReadKey();
+
+//Methods with two conclusions
+
+			double rezultDividing;
+			double remainsDividing;
+			MyFirstHomework.GetDividingNumbersEndRemainderOfTheDivision(9, 2, out rezultDividing, out remainsDividing);
+			Console.WriteLine(rezultDividing);
+			Console.WriteLine(remainsDividing);
+
+			string stringA = "Hello";
+			string stringB = "Goodbye";
+			MyFirstHomework.GetReplacingContent(ref stringA, ref stringB);
+			Console.WriteLine(stringA);
+			Console.WriteLine(stringB);
+
+			double x1;
+			double x2;
+			MySecondHomework.GetSolutionOfTheEquation(-5.5, 0, 12, out x1, out x2);
+			Console.WriteLine(x1);
+			Console.WriteLine(x2);
+
+			double numbersAreMultiples;
+			MyThirdHomework.GetNumbersAreMultiplesA(-150.5, out numbersAreMultiples);
+
+			int numbers1;
+			MyThirdHomework.GetNumbersSumOfEvenDigitsGreater(50, out numbers1);
+			Console.ReadLine();
 		}
 	}
 }

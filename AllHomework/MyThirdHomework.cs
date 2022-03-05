@@ -193,5 +193,54 @@ namespace AllHomework
 			}
 				return isEqualNumner;
 		}
+
+//Methods with two conclusions
+
+		public static void GetNumbersAreMultiplesA(double valueA, out double i)
+		{
+			i = Math.Abs(valueA);
+			while (i < 1000)
+			{
+				Console.WriteLine(i);
+				i += Math.Abs(valueA);
+			}
+		}
+		public static void GetNumbersSumOfEvenDigitsGreater(int valueN, out int i)
+		{
+			int tmp;
+			int sumEvenNumber;
+			int sumOddNumber;
+			i = 1;
+			for ( ; i <= valueN; i++)
+			{
+				if (i % 2 == 0 && i < 10)
+				{
+					Console.Write((i)+" ");
+				}
+				else if (i >= 10)
+				{
+					sumEvenNumber = 0;
+					sumOddNumber = 0;
+					int j = i;
+					while (j >= 1)
+					{
+						tmp = j % 10;
+						if (tmp % 2 == 0)
+						{
+							sumEvenNumber += tmp;
+						}
+						else
+						{
+							sumOddNumber += tmp;
+						}
+						j = j / 10;
+					}
+					if (sumEvenNumber >= sumOddNumber)
+					{
+						Console.Write((i) + " ");
+					}
+				}
+			}
+		}
 	}
 }

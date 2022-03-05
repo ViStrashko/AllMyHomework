@@ -21,5 +21,18 @@ namespace AllHomework
 			double valueB = coordinateY1 - valueA * coordinateX1;
 			Console.WriteLine($"Уравнение прямой: Y={valueA}*X+{valueB}");
 		}
+
+//Methods with two conclusions
+
+		public static void GetDividingNumbersEndRemainderOfTheDivision(double valueA, double valueB, out double rezultDividing, out double remainsDividing)
+		{
+			rezultDividing = valueA / valueB;
+			remainsDividing = valueA % valueB;
+		}
+		public static void GetReplacingContent(ref string stringA, ref string stringB)
+		{
+			stringA = "Goodbye";
+			stringB = "Hello";
+		}
 	}
 }
