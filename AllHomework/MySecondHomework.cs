@@ -102,8 +102,13 @@ namespace AllHomework
 			}
 			return number;
 		}
-		public static void GetTwodigitNumberInWords(int number)
+		public static void GetTwodigitNumberInWords(double number1)
 		{
+			if (number1 <= 9 || number1 >=100 || number1%1!=0)
+			{
+				throw new Exception("The input number1 must be two-digit, positive and integer");
+			}
+			int number = Convert.ToInt32(number1);
 			if (number > 10 && number < 20)
 			{
 				GetNumbersFromElevenToNineteen(number);
@@ -116,6 +121,10 @@ namespace AllHomework
 		}
 		public static void GetAscendingNumbers(double valueA, double valueB, double valueC)
 		{
+			if (valueA == valueB || valueA == valueC || valueB == valueC)
+			{
+				throw new Exception("The values of valueA, ValueB and ValueC should not be equal to each other, enter different values");
+			}
 			if (valueA < valueB && valueB < valueC)
 			{
 				Console.WriteLine($"{valueA}, {valueB}, {valueC}");
@@ -146,6 +155,10 @@ namespace AllHomework
 
 		public static void GetSolutionOfTheEquation(double valueA, double valueB, double valueC, out double x1, out double x2)
 		{
+			if (valueA == 0)
+			{
+				throw new Exception("The ValueA value should not be zero, enter a different ValueA value");
+			}
 			x1 = 0;
 			x2 = 0;
 			double discriminant;

@@ -3,8 +3,13 @@ namespace AllHomework
 {
 	static class MyThirdHomework
 	{
-		public static double GetNumberOfDegree(double valueA, double valueB)
+		public static double GetNumberOfDegree(double valueA, double valueBB)
 		{
+			if (valueBB % 1 != 0)
+			{
+				throw new Exception("The valueBB value must be an integer, enter an integer");
+			}
+			int valueB = Convert.ToInt32(valueBB);
 			int i = 0;
 			double tmp=0;
 			double rezult = 1;
@@ -16,6 +21,10 @@ namespace AllHomework
 			if (valueB > 0)
 			{
 				tmp=rezult;
+			}
+			if (valueA == 0)
+			{
+				throw new Exception("If the valueA value is zero to the minus degree, the expression does not make sense, enter another valueA value");
 			}
 			else if (valueB < 0 && valueA != 0)
 			{
@@ -29,6 +38,10 @@ namespace AllHomework
 		}
 		public static double GetQuantityNumbersSmallerSquare(double valueA)
 		{
+			if (valueA <= 0)
+			{
+				throw new Exception("The valueA value must be greater than zero");
+			}
 			int i = 0;
 			while (i * i < valueA)
 			{
@@ -36,8 +49,13 @@ namespace AllHomework
 			}
 			return (i-1);
 		}
-		public static void GetLargestDivisorOfNumber(int valueA)
+		public static void GetLargestDivisorOfNumber(double valueAA)
 		{
+			if (valueAA == 0 || valueAA% 1 != 0)
+			{
+				throw new Exception("If the valueA value is zero or fractional, the expression does not matter, enter another valueA value");
+			}
+			int valueA = Convert.ToInt32(valueAA);
 			for (int i = Math.Abs(valueA); i > 0; i--)
 			{
 				if (valueA % i == 0 && i != valueA && i != Math.Abs(valueA))
@@ -47,8 +65,14 @@ namespace AllHomework
 				}
 			}
 		}
-		public static int GetSumNumbersDivisibleBy7(int valueA, int valueB)
+		public static int GetSumNumbersDivisibleBy7(double valueAA, double valueBB)
 		{
+			if (valueAA % 1 != 0 || valueBB % 1 != 0)
+			{
+				throw new Exception("Enter the integers valueAA and valueBB");
+			}
+			int valueA = Convert.ToInt32(valueAA);
+			int valueB = Convert.ToInt32(valueBB);
 			int sum = 0;
 			int tmp1 = 0;
 			int tmp2 = 0;
@@ -63,8 +87,13 @@ namespace AllHomework
 			}
 			return sum;
 		}
-		public static int GetNumberFibonacciSeries(int valueN)
+		public static int GetNumberFibonacciSeries(double valueNN)
 		{
+			if (valueNN <= 0 || valueNN % 1 != 0)
+			{
+				throw new Exception("The value of the valueNN number must be an integer and positive");
+			}
+			int valueN = Convert.ToInt32(valueNN);
 			int numberFibonacci1 = 1;
 			int numberFibonacci2 = 1;
 			int sum = 0;
@@ -91,8 +120,14 @@ namespace AllHomework
 			}
 			return sum;
 		}
-		public static int GetGreatestCommonDivisorNumbers(int valueA, int valueB)
+		public static int GetGreatestCommonDivisorNumbers(int valueAA, int valueBB)
 		{
+			if (valueAA % 1 != 0 || valueBB % 1 != 0 || valueAA == 0 || valueBB == 0)
+			{
+				throw new Exception("The values of valueAA and valueBB must be integers and not equal to zero");
+			}
+			int valueA = Convert.ToInt32(valueAA);
+			int valueB = Convert.ToInt32(valueBB);
 			int tmp1;
 			int tmp2;
 			tmp1 = Math.Abs(valueA);
@@ -114,8 +149,13 @@ namespace AllHomework
 		{
 			return n * n * n;
 		}
-		public static double GetNumberMethodOfHalfDivision(int number)
+		public static double GetNumberMethodOfHalfDivision(double number1)
 		{
+			if (number1 <= 0 || number1 % 1 != 0)
+			{
+				throw new Exception("The value of the number1 number must be an integer and positive");
+			}
+			int number = Convert.ToInt32(number1);
 			double tmp = 0;
 			double e = 0.01;
 			double leftNumber = 0;
@@ -135,8 +175,13 @@ namespace AllHomework
 			}
 			return tmp;
 		}
-		public static long GetNumberOfOddDigits(long number)
+		public static long GetNumberOfOddDigits(double number1)
 		{
+			if (number1 == 0 || number1 % 1 != 0)
+			{
+				throw new Exception("The value of number1 must be an integer and not equal to zero");
+			}
+			long number = Convert.ToInt64(number1);
 			long tmp1;
 			long tmp2;
 			long countNumber = 0;
@@ -152,8 +197,13 @@ namespace AllHomework
 			}
 			return countNumber;
 		}
-		public static void GetMirrorNumber(long number)
+		public static void GetMirrorNumber(double number1)
 		{
+			if (number1 == 0 || number1 % 1 != 0)
+			{
+				throw new Exception("The value of number1 must be an integer and not equal to zero");
+			}
+			long number = Convert.ToInt64(number1);
 			long tmp1;
 			long tmp2;
 			tmp2 = Math.Abs(number);
@@ -168,8 +218,14 @@ namespace AllHomework
 				tmp2 = tmp2 / 10;
 			}
 		}
-		public static bool GetAlignmentOfDigitsOfNumbers(int number1, int number2)
+		public static bool GetAlignmentOfDigitsOfNumbers(double number12, double number22)
 		{
+			if (number12 == 0 || number22 == 0 || number12 % 1 != 0 || number22 % 1 != 0)
+			{
+				throw new Exception("If the values of number12 and number22 are zero, the task does not make sense, the numbers number12 and number22 must be integers");
+			}
+			int number1 = Convert.ToInt32(number12);
+			int number2 = Convert.ToInt32(number22);
 			int tmp1;
 			int tmp2;
 			int tmp3;
@@ -198,6 +254,10 @@ namespace AllHomework
 
 		public static void GetNumbersAreMultiplesA(double valueA, out double i)
 		{
+			if (valueA == 0)
+			{
+				throw new Exception("The ValueA value should not be zero, enter a different ValueA value");
+			}
 			i = Math.Abs(valueA);
 			while (i < 1000)
 			{
@@ -205,8 +265,13 @@ namespace AllHomework
 				i += Math.Abs(valueA);
 			}
 		}
-		public static void GetNumbersSumOfEvenDigitsGreater(int valueN, out int i)
+		public static void GetNumbersSumOfEvenDigitsGreater(double valueNN, out int i)
 		{
+			if (valueNN <= 0 || valueNN % 1 != 0)
+			{
+				throw new Exception("If the value of the valueNN number is zero, the task does not make sense, the valueNN number must be an integer");
+			}
+			int valueN = Convert.ToInt32(valueNN);
 			int tmp;
 			int sumEvenNumber;
 			int sumOddNumber;

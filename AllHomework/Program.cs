@@ -27,12 +27,12 @@ namespace AllHomework
 			double number = MyThirdHomework.GetNumberOfDegree(-2.5, -3);
 			Console.WriteLine(number);
 
-			double numbers = MyThirdHomework.GetQuantityNumbersSmallerSquare(17);
+			double numbers = MyThirdHomework.GetQuantityNumbersSmallerSquare(17.5);
 			Console.WriteLine(numbers);
 
 			MyThirdHomework.GetLargestDivisorOfNumber(-55);
 
-			int sum = MyThirdHomework.GetSumNumbersDivisibleBy7(-15, 1);
+			int sum = MyThirdHomework.GetSumNumbersDivisibleBy7(0, -10);
 			Console.WriteLine(sum);
 
 			int numberFibonacci = MyThirdHomework.GetNumberFibonacciSeries(10);
