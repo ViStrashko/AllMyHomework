@@ -27,11 +27,12 @@ namespace AllHomework
 			double number = MyThirdHomework.GetNumberOfDegree(-2.5, -3);
 			Console.WriteLine(number);
 
-			double numbers = MyThirdHomework.GetQuantityNumbersSmallerSquare(17.5);
-			Console.WriteLine(numbers);
+			double numberOfNumbers = MyThirdHomework.GetQuantityNumbersSmallerSquare(17.5);
+			Console.WriteLine(numberOfNumbers);
 
-			MyThirdHomework.GetLargestDivisorOfNumber(-55);
-
+			int divisorOfNumber = MyThirdHomework.GetLargestDivisorOfNumber(-55);
+			Console.WriteLine(divisorOfNumber);
+			       
 			int sum = MyThirdHomework.GetSumNumbersDivisibleBy7(0, -10);
 			Console.WriteLine(sum);
 
@@ -77,6 +78,31 @@ namespace AllHomework
 
 			int numbers1;
 			MyThirdHomework.GetNumbersSumOfEvenDigitsGreater(50, out numbers1);
+
+			//Arrays in methods
+
+			int[] randomArray = MyArray.GetRandomArray(10);
+			                           
+			int minValueArray = MyArray.GetMinimumElementOfTheArray(randomArray);
+			Console.WriteLine(minValueArray);
+
+			int maxValueArray = MyArray.GetMaximumElementOfTheArray(randomArray);
+			Console.WriteLine(maxValueArray);
+
+			int indexMinimumValueArray = MyArray.GetIndexMinimumElementOfTheArray(randomArray);
+			Console.WriteLine(indexMinimumValueArray);
+
+			int indexMaximumValueArray = MyArray.GetIndexMaximumElementOfTheArray(randomArray);
+			Console.WriteLine(indexMaximumValueArray);
+
+			int sumElementsOddIndex = MyArray.GetSumOfElementsOddIndexOfTheArray(new int[] { -1, 2, -8, 5, -4, 5, 3, 8, 4, -7 });
+			Console.WriteLine(sumElementsOddIndex);
+
+			MyArray.GetArrayReverse(new int[] { -1, 2, -8, 5, -4, 5, 3, 8, 4, -7 });
+
+			int numberOddElements = MyArray.GetNumberOfOddArrayElements(new int[] { -1, 2, -8, 5, -4, 5, 3, 8, 4, -7 });
+			Console.WriteLine(numberOddElements);
+
 			Console.ReadLine();
 		}
 	}

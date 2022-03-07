@@ -49,21 +49,23 @@ namespace AllHomework
 			}
 			return (i);
 		}
-		public static void GetLargestDivisorOfNumber(double valueAA)
+		public static int GetLargestDivisorOfNumber(double valueAA)
 		{
 			if (valueAA == 0 || valueAA% 1 != 0)
 			{
 				throw new Exception("If the valueA value is zero or fractional, the expression does not matter, enter another valueA value");
 			}
 			int valueA = Convert.ToInt32(valueAA);
-			for (int i = Math.Abs(valueA); i > 0; i--)
+			int i = Math.Abs(valueA);
+			for (; i > 0; i--)
 			{
 				if (valueA % i == 0 && i != valueA && i != Math.Abs(valueA))
 				{
-					Console.WriteLine($"Наибольший делитель числа {valueA}: {i}");
 					break;
 				}
 			}
+			Console.Write($"Наибольший делитель числа {valueA}: ");
+			return i;
 		}
 		public static int GetSumNumbersDivisibleBy7(double valueAA, double valueBB)
 		{
