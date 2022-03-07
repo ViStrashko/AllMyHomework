@@ -55,15 +55,33 @@ namespace AllHomework
 		{
 			switch (number)
 			{
-				case 11: Console.WriteLine("одинадцать"); break;
-				case 12: Console.WriteLine("двенадцать"); break;
-				case 13: Console.WriteLine("тринадцать"); break;
-				case 14: Console.WriteLine("четырнадцать"); break;
-				case 15: Console.WriteLine("пятнадцать"); break;
-				case 16: Console.WriteLine("шеснадцать"); break;
-				case 17: Console.WriteLine("семнадцать"); break;
-				case 18: Console.WriteLine("восемьнадцать"); break;
-				case 19: Console.WriteLine("девятнадцать"); break;
+				case 11:
+					Console.WriteLine("одинадцать");
+				    break;
+				case 12:
+					Console.WriteLine("двенадцать");
+				    break;
+				case 13:
+					Console.WriteLine("тринадцать");
+				    break;
+				case 14:
+					Console.WriteLine("четырнадцать");
+				    break;
+				case 15:
+					Console.WriteLine("пятнадцать");
+				    break;
+				case 16:
+					Console.WriteLine("шеснадцать");
+				    break;
+				case 17:
+					Console.WriteLine("семнадцать");
+				    break;
+				case 18:
+					Console.WriteLine("восемьнадцать");
+				    break;
+				case 19:
+					Console.WriteLine("девятнадцать");
+				    break;
 			}
 			return number;
 		}
@@ -71,15 +89,33 @@ namespace AllHomework
 		{
 			switch (number / 10)
 			{
-				case 1: Console.WriteLine("деcять"); break;
-				case 2: Console.Write("двадцать "); break;
-				case 3: Console.Write("тридцать "); break;
-				case 4: Console.Write("сорок "); break;
-				case 5: Console.Write("пятьдесят "); break;
-				case 6: Console.Write("шестьдесят "); break;
-				case 7: Console.Write("семьдесят "); break;
-				case 8: Console.Write("восемьдесят "); break;
-				case 9: Console.Write("девяносто "); break;
+				case 1:
+					Console.WriteLine("деcять");
+				    break;
+				case 2:
+					Console.Write("двадцать ");
+				    break;
+				case 3:
+					Console.Write("тридцать ");
+				    break;
+				case 4:
+					Console.Write("сорок ");
+				    break;
+				case 5:
+					Console.Write("пятьдесят ");
+				    break;
+				case 6:
+					Console.Write("шестьдесят ");
+				    break;
+				case 7:
+					Console.Write("семьдесят ");
+				    break;
+				case 8:
+					Console.Write("восемьдесят ");
+				    break;
+				case 9:
+					Console.Write("девяносто ");
+				    break;
 			}
 			return number;
 		}
@@ -89,15 +125,33 @@ namespace AllHomework
 			{
 				switch (number % 10)
 				{
-					case 1: Console.WriteLine("один"); break;
-					case 2: Console.WriteLine("два"); break;
-					case 3: Console.WriteLine("три"); break;
-					case 4: Console.WriteLine("четыре"); break;
-					case 5: Console.WriteLine("пять"); break;
-					case 6: Console.WriteLine("шесть"); break;
-					case 7: Console.WriteLine("семь"); break;
-					case 8: Console.WriteLine("восемь"); break;
-					case 9: Console.WriteLine("девять"); break;
+					case 1:
+						Console.WriteLine("один");
+					    break;
+					case 2:
+						Console.WriteLine("два");
+					    break;
+					case 3:
+						Console.WriteLine("три");
+					    break;
+					case 4:
+						Console.WriteLine("четыре");
+					    break;
+					case 5:
+						Console.WriteLine("пять");
+					    break;
+					case 6:
+						Console.WriteLine("шесть");
+					    break;
+					case 7:
+						Console.WriteLine("семь");
+					    break;
+					case 8:
+						Console.WriteLine("восемь");
+					    break;
+					case 9:
+						Console.WriteLine("девять");
+					    break;
 				}
 			}
 			return number;
