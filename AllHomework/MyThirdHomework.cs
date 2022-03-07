@@ -38,7 +38,7 @@ namespace AllHomework
 		}
 		public static double GetQuantityNumbersSmallerSquare(double valueA)
 		{
-			if (valueA <= 0)
+			if (valueA < 0)
 			{
 				throw new Exception("The valueA value must be greater than zero");
 			}
@@ -47,7 +47,7 @@ namespace AllHomework
 			{
 				i++;
 			}
-			return (i-1);
+			return (i);
 		}
 		public static void GetLargestDivisorOfNumber(double valueAA)
 		{
@@ -177,9 +177,9 @@ namespace AllHomework
 		}
 		public static long GetNumberOfOddDigits(double number1)
 		{
-			if (number1 == 0 || number1 % 1 != 0)
+			if (number1 % 1 != 0)
 			{
-				throw new Exception("The value of number1 must be an integer and not equal to zero");
+				throw new Exception("The value of number1 must be an integer");
 			}
 			long number = Convert.ToInt64(number1);
 			long tmp1;
@@ -199,17 +199,17 @@ namespace AllHomework
 		}
 		public static void GetMirrorNumber(double number1)
 		{
-			if (number1 == 0 || number1 % 1 != 0)
+			if (number1 % 1 != 0)
 			{
-				throw new Exception("The value of number1 must be an integer and not equal to zero");
+				throw new Exception("The value of number1 must be an integer");
 			}
 			long number = Convert.ToInt64(number1);
 			long tmp1;
 			long tmp2;
 			tmp2 = Math.Abs(number);
-			if (number < 0)
+			if (number == 0)
 			{
-				Console.Write("-");
+				Console.Write(0);
 			}
 			while (tmp2 >= 1)
 			{

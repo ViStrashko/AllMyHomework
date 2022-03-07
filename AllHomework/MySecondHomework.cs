@@ -209,9 +209,9 @@ namespace AllHomework
 
 		public static void GetSolutionOfTheEquation(double valueA, double valueB, double valueC, out double x1, out double x2)
 		{
-			if (valueA == 0)
+			if (valueA == 0 || valueB == 0)
 			{
-				throw new Exception("The ValueA value should not be zero, enter a different ValueA value");
+				throw new Exception("The ValueA value end ValueB value should not be zero, enter a different ValueA value end ValueB value");
 			}
 			x1 = 0;
 			x2 = 0;

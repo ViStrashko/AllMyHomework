@@ -68,7 +68,7 @@ namespace AllHomework
 
 			double x1;
 			double x2;
-			MySecondHomework.GetSolutionOfTheEquation(-5.5, 0, 12, out x1, out x2);
+			MySecondHomework.GetSolutionOfTheEquation(-5.5, 0.1, 12, out x1, out x2);
 			Console.WriteLine(x1);
 			Console.WriteLine(x2);
 
