@@ -84,34 +84,43 @@ namespace AllHomework
 			int[] randomArray = MyArray.GetRandomArray(10);
 			int[] arrayConsecutiveNumbers = MyArray.GetArrayOfConsecutiveNumbers(21);
 			int[] array = new int[] { -1, 2, -8, 5, -4, 5, 3, 8, 4, -7 };
+			int[] copyArray = MyArray.CopyArray(array);
 			                           
-			int minValueArray = MyArray.GetMinimumElementOfTheArray(randomArray);
+			int minValueArray = MyArray.GetMinimumElementOfTheArray(copyArray);
 			Console.WriteLine(minValueArray);
 
-			int maxValueArray = MyArray.GetMaximumElementOfTheArray(randomArray);
+			int maxValueArray = MyArray.GetMaximumElementOfTheArray(copyArray);
 			Console.WriteLine(maxValueArray);
 
-			int indexMinimumValueArray = MyArray.GetIndexMinimumElementOfTheArray(randomArray);
+			int indexMinimumValueArray = MyArray.GetIndexMinimumElementOfTheArray(copyArray);
 			Console.WriteLine(indexMinimumValueArray);
 
-			int indexMaximumValueArray = MyArray.GetIndexMaximumElementOfTheArray(randomArray);
+			int indexMaximumValueArray = MyArray.GetIndexMaximumElementOfTheArray(copyArray);
 			Console.WriteLine(indexMaximumValueArray);
 
-			int sumElementsOddIndex = MyArray.GetSumOfElementsOddIndexOfTheArray(array);
+			int sumElementsOddIndex = MyArray.GetSumOfElementsOddIndexOfTheArray(copyArray);
 			Console.WriteLine(sumElementsOddIndex);
 
-			int[] arrayReverse = MyArray.GetArrayReverse(arrayConsecutiveNumbers);
+			int[] arrayReverse = MyArray.GetArrayReverse(copyArray);
 
-			int numberOddElements = MyArray.GetNumberOfOddArrayElements(array);
-			Console.WriteLine(numberOddElements);
+			int numberOfOddElements = MyArray.GetNumberOfOddArrayElements(copyArray);
+			Console.WriteLine(numberOfOddElements);
 
-			int[] arrayChange = MyArray.SwapTheHalvesOfTheArray(arrayConsecutiveNumbers);
+			int[] arrayChange = MyArray.SwapTheHalvesOfTheArray(copyArray);
 
-			int[] bubbleSort = MyArray.SortArrayByBubbleMethod(array);
+			int[] bubbleSort = MyArray.SortArrayByBubbleMethod(copyArray);
 
-			int[] selectionSort = MyArray.SortArraySelectionMethod(array);
+			int[] selectionSort = MyArray.SortArraySelectionMethod(copyArray);
 
-			MyArray.CheckTheOperationOfTheMethod(selectionSort);
+			int[] numbersAreMultiplesA = MyArray.GetNumbersAreMultiplesA(-150);
+
+			int[] numbersSumOfEvenDigitsGreater = MyArray.GetNumbersSumOfEvenDigitsGreater(50);
+
+			double[] solutionOfTheEquation = MyArray.GetSolutionOfTheEquation(-2.1, 5.5, 3.1);
+
+			double[] ascendingNumbers = MyArray.GetAscendingNumbers(-7.8, 1.5, -4);
+
+			MyArray.CheckTheOperationOfTheMethod(numbersSumOfEvenDigitsGreater);
 			Console.ReadLine();
 		}
 	}
