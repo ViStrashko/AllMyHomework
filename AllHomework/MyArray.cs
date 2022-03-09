@@ -13,6 +13,27 @@ namespace AllHomework
 			}
 			return myArray;
 		}
+		public static int[] GetArrayOfConsecutiveNumbers(int number)
+		{
+			int tmp;
+			tmp = 0;
+			int[] numbers = new int[number];
+			for (int i = 0; i < number; i++)
+			{
+				tmp += 1;
+				numbers[i] = tmp;
+			}
+			return numbers;
+		}
+		public static void CheckTheOperationOfTheMethod(int[] numbers)
+		{
+			int[] tmp = new int[numbers.Length];
+			Array.Copy(numbers, tmp, numbers.Length);
+			for (int i = 0; i < numbers.Length; i++)
+			{
+				Console.Write(tmp[i] + " ");
+			}
+		}
 		public static int GetMinimumElementOfTheArray(int[] numbers)
 		{
 			int[] tmp = new int[numbers.Length];
@@ -97,15 +118,17 @@ namespace AllHomework
 			Console.Write("Cумма элементов массива с нечетным индексом: ");
 			return sumElementsOddIndex;
 		}
-		public static void GetArrayReverse(int[] numbers)
+		public static int[] GetArrayReverse(int[] numbers)
 		{
 			int[] tmp = new int[numbers.Length];
 			Array.Copy(numbers, tmp, numbers.Length);
-			Console.Write("Реверс массива: ");
+			int[] tmp1 = new int[numbers.Length];
+			int j = 0;
 			for (int i = numbers.Length-1; i >= 0; i--)
 			{
-				Console.Write(tmp[i]+" ");
+				tmp1[j++] = tmp[i];
 			}
+			return tmp1;
 		}
 		public static int GetNumberOfOddArrayElements(int[] numbers)
 		{
@@ -120,8 +143,82 @@ namespace AllHomework
 					numberOddElements++;
 				}
 			}
-			Console.Write("\nКоличество нечетных элементов массива: ");
+			Console.Write("Количество нечетных элементов массива: ");
 			return numberOddElements;
+		}
+		public static int[] SwapTheHalvesOfTheArray(int[] numbers)
+		{
+			int[] tmp = new int[numbers.Length];
+			Array.Copy(numbers, tmp, numbers.Length);
+			int[] tmp1 = new int[numbers.Length];
+			int j = 0;
+			if (numbers.Length % 2 == 0)
+			{
+				for (int i = numbers.Length / 2; i < numbers.Length; i++)
+				{
+					tmp1[j++] = tmp[i];
+				}
+				for (int i = 0; i < numbers.Length / 2; i++)
+				{
+					tmp1[j++] = tmp[i];
+				}
+			}
+			else
+			{
+				for (int i = (numbers.Length / 2)+1; i < numbers.Length; i++)
+				{
+					tmp1[j++] = tmp[i];
+				}
+				tmp1[j++] = tmp[numbers.Length / 2];
+				for (int i = 0; i < numbers.Length / 2; i++)
+				{
+					tmp1[j++] = tmp[i];
+				}
+			}
+			return tmp1;
+		}
+			public static int[] SortArrayByBubbleMethod(int[] numbers)
+		{
+			int[] tmp = new int[numbers.Length];
+			Array.Copy(numbers, tmp, numbers.Length);
+			int tmp1;
+			for (int i = 0; i < numbers.Length; i++)
+			{
+				for (int j = i+1; j < numbers.Length; j++)
+				{
+					if (tmp[i] > tmp[j])
+					{
+						tmp1 = tmp[i];
+						tmp[i] = tmp[j];
+						tmp[j] = tmp1;
+					}
+				}
+			}
+			return tmp;
+		}
+		public static int[] SortArraySelectionMethod(int[] numbers)
+		{
+			int[] tmp = new int[numbers.Length];
+			Array.Copy(numbers, tmp, numbers.Length);
+			int tmp1;
+			for (int i = 0; i < numbers.Length - 1; i++)
+			{
+				int max = i;
+				for (int j = i + 1; j < numbers.Length; j++)
+				{
+					if (tmp[j] > tmp[max])
+					{
+						max = j;
+					}
+				}
+				if (max!=i)
+				{
+					tmp1 = tmp[i];
+					tmp[i] = tmp[max];
+					tmp[max] = tmp1;
+				}
+			}
+			return tmp;
 		}
 	}
 }

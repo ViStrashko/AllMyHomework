@@ -79,9 +79,11 @@ namespace AllHomework
 			int numbers1;
 			MyThirdHomework.GetNumbersSumOfEvenDigitsGreater(50, out numbers1);
 
-			//Arrays in methods
+//Arrays in methods
 
 			int[] randomArray = MyArray.GetRandomArray(10);
+			int[] arrayConsecutiveNumbers = MyArray.GetArrayOfConsecutiveNumbers(21);
+			int[] array = new int[] { -1, 2, -8, 5, -4, 5, 3, 8, 4, -7 };
 			                           
 			int minValueArray = MyArray.GetMinimumElementOfTheArray(randomArray);
 			Console.WriteLine(minValueArray);
@@ -95,14 +97,21 @@ namespace AllHomework
 			int indexMaximumValueArray = MyArray.GetIndexMaximumElementOfTheArray(randomArray);
 			Console.WriteLine(indexMaximumValueArray);
 
-			int sumElementsOddIndex = MyArray.GetSumOfElementsOddIndexOfTheArray(new int[] { -1, 2, -8, 5, -4, 5, 3, 8, 4, -7 });
+			int sumElementsOddIndex = MyArray.GetSumOfElementsOddIndexOfTheArray(array);
 			Console.WriteLine(sumElementsOddIndex);
 
-			MyArray.GetArrayReverse(new int[] { -1, 2, -8, 5, -4, 5, 3, 8, 4, -7 });
+			int[] arrayReverse = MyArray.GetArrayReverse(arrayConsecutiveNumbers);
 
-			int numberOddElements = MyArray.GetNumberOfOddArrayElements(new int[] { -1, 2, -8, 5, -4, 5, 3, 8, 4, -7 });
+			int numberOddElements = MyArray.GetNumberOfOddArrayElements(array);
 			Console.WriteLine(numberOddElements);
 
+			int[] arrayChange = MyArray.SwapTheHalvesOfTheArray(arrayConsecutiveNumbers);
+
+			int[] bubbleSort = MyArray.SortArrayByBubbleMethod(array);
+
+			int[] selectionSort = MyArray.SortArraySelectionMethod(array);
+
+			MyArray.CheckTheOperationOfTheMethod(selectionSort);
 			Console.ReadLine();
 		}
 	}
