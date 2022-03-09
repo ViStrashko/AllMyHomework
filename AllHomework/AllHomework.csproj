@@ -38,6 +38,7 @@
     <Compile Include="MySecondHomework.cs" />
     <Compile Include="MyThirdHomework.cs" />
     <Compile Include="MyArray.cs" />
+    <Compile Include="TwoDimensionalArrays.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -121,6 +121,31 @@ namespace AllHomework
 			double[] ascendingNumbers = MyArray.GetAscendingNumbers(-7.8, 1.5, -4);
 
 			MyArray.CheckTheOperationOfTheMethod(numbersSumOfEvenDigitsGreater);
+
+//Two-dimensional arrays
+
+			int[,] randArray = TwoDimensionalArrays.GetRandomArray(5, 5);
+			int[,] copy = TwoDimensionalArrays.CopyArray(randArray);
+
+			int minValueArray2 = TwoDimensionalArrays.GetMinimumElementOfTheArray(copy);
+			Console.WriteLine(minValueArray2);
+
+			int maxValueArray2 = TwoDimensionalArrays.GetMaximumElementOfTheArray(copy);
+			Console.WriteLine(maxValueArray2);
+
+			int minIndexI;
+			int minIndexJ;
+			TwoDimensionalArrays.GetIndexMinimumElementOfTheArray(copy, out minIndexI, out minIndexJ);
+			Console.WriteLine(minIndexI);
+			Console.WriteLine(minIndexJ);
+
+			int maxIndexI;
+			int maxIndexJ;
+			TwoDimensionalArrays.GetIndexMaximumElementOfTheArray(copy, out maxIndexI, out maxIndexJ);
+			Console.WriteLine(maxIndexI);
+			Console.WriteLine(maxIndexJ);
+
+			//TwoDimensionalArrays.CheckTheOperationOfTheMethod();
 			Console.ReadLine();
 		}
 	}
