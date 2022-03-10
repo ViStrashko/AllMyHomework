@@ -125,7 +125,8 @@ namespace AllHomework
 //Two-dimensional arrays
 
 			int[,] randArray = TwoDimensionalArrays.GetRandomArray(5, 5);
-			int[,] copy = TwoDimensionalArrays.CopyArray(randArray);
+			int[,] array2 = new int[,] { { -1, -8, 5, -2, 3 }, { 2, 0, 10, -3, 4 }, { 1, 1, 3, -2, -5 }, { -2, 3, 8, -7, 0 }, { -5, 1, 9, 4, -2 } };
+			int[,] copy = TwoDimensionalArrays.CopyArray(array2);
 
 			int minValueArray2 = TwoDimensionalArrays.GetMinimumElementOfTheArray(copy);
 			Console.WriteLine(minValueArray2);

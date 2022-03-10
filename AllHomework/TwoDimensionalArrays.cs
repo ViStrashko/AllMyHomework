@@ -45,7 +45,7 @@ namespace AllHomework
 			int[,] tmp = CopyArray(numbers);
 			int min;
 			min = tmp[0, 0];
-			for (int i = 1; i < numbers.GetLength(0); i++)
+			for (int i = 0; i < numbers.GetLength(0); i++)
 			{
 				for (int j = 1; j < numbers.GetLength(1); j++)
 				{
@@ -63,7 +63,7 @@ namespace AllHomework
 			int[,] tmp = CopyArray(numbers);
 			int max;
 			max = tmp[0, 0];
-			for (int i = 1; i < numbers.GetLength(0); i++)
+			for (int i = 0; i < numbers.GetLength(0); i++)
 			{
 				for (int j = 1; j < numbers.GetLength(1); j++)
 				{
@@ -83,12 +83,13 @@ namespace AllHomework
 			min = tmp[0,0];
 			indexI = 0;
 			indexJ = 0;
-			for (int i = 1; i < numbers.GetLength(0); i++)
+			for (int i = 0; i < numbers.GetLength(0); i++)
 			{
 				for (int j = 1; j < numbers.GetLength(1); j++)
 				{
 					if (tmp[i, j] < min)
 					{
+						min = tmp[i, j];
 						indexI = i;
 						indexJ = j;
 					}
@@ -102,12 +103,13 @@ namespace AllHomework
 			max = tmp[0,0];
 			indexI = 0;
 			indexJ = 0;
-			for (int i = 1; i < numbers.GetLength(0); i++)
+			for (int i = 0; i < numbers.GetLength(0); i++)
 			{
 				for (int j = 1; j < numbers.GetLength(1); j++)
 				{
 					if (tmp[i,j] > max)
 					{
+						max = tmp[i, j];
 						indexI = i;
 						indexJ = j;
 					}

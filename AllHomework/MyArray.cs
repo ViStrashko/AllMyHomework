@@ -80,6 +80,7 @@ namespace AllHomework
 			{
 				if (tmp[i] < min)
 				{
+					min = tmp[i];
 					index = i;
 				}
 			}
@@ -97,6 +98,7 @@ namespace AllHomework
 			{
 				if (tmp[i] > max)
 				{
+					max = tmp[i];
 					index = i;
 				}
 			}
