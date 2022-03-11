@@ -25,9 +25,6 @@ namespace AllHomework
 			string numberInWords = MySecondHomework.GetTwodigitNumberInWords(25);
 			Console.WriteLine(numberInWords);
 
-			string ascendingNumbers = MySecondHomework.GetAscendingNumbers(10.8, 0, -5);
-			Console.WriteLine(ascendingNumbers);
-
 			double number = MyThirdHomework.GetNumberOfDegree(-2.5, -3);
 			Console.WriteLine(number);
 
@@ -52,7 +49,8 @@ namespace AllHomework
 			long oddNumbers = MyThirdHomework.GetNumberOfOddDigits(-710518555);
 			Console.WriteLine(oddNumbers);
 
-			long[] reversNumber = MyThirdHomework.GetMirrorNumber(-11155577788555);
+			string reversNumber = MyThirdHomework.GetMirrorNumber(-111555);
+			Console.WriteLine(reversNumber);
 
 			bool pitting = MyThirdHomework.GetAlignmentOfDigitsOfNumbers(-1234, -4217);
 			Console.WriteLine(pitting);
@@ -71,18 +69,16 @@ namespace AllHomework
 			Console.WriteLine(stringA);
 			Console.WriteLine(stringB);
 
-			double x1;
-			double x2;
-			MySecondHomework.GetSolutionOfTheEquation(-5.5, 0.1, 12, out x1, out x2);
-			Console.WriteLine(x1);
-			Console.WriteLine(x2);
+			double[] ascendingNumbers = MySecondHomework.GetAscendingNumbers(10.8, 0, -5);
 
-			double numbersAreMultiples;
-			MyThirdHomework.GetNumbersAreMultiplesA(-150.5, out numbersAreMultiples);
+			double[] solutionOfTheEquation;
+			string rezultOfTheEquation;
+			MySecondHomework.GetSolutionOfTheEquation(-2.1, 5.5, -3.1, out solutionOfTheEquation, out rezultOfTheEquation);
+			Console.WriteLine(rezultOfTheEquation);
 
-			int numbers1;
-			MyThirdHomework.GetNumbersSumOfEvenDigitsGreater(50, out numbers1);
-			Console.WriteLine(numbers1);
+			int[] numbersAreMultiplesA = MyThirdHomework.GetNumbersAreMultiplesA(-150);
+
+			int[] numbersSumOfEvenDigitsGreater = MyThirdHomework.GetNumbersSumOfEvenDigitsGreater(50);
 
 //Arrays in methods
 
@@ -117,15 +113,7 @@ namespace AllHomework
 
 			int[] selectionSort = MyArray.SortArraySelectionMethod(copyArray);
 
-			int[] numbersAreMultiplesA = MyArray.GetNumbersAreMultiplesA(-150);
-
-			int[] numbersSumOfEvenDigitsGreater = MyArray.GetNumbersSumOfEvenDigitsGreater(50);
-
-			double[] solutionOfTheEquation = MyArray.GetSolutionOfTheEquation(-2.1, 5.5, 3.1);
-
-			double[] ascendingNumbers2 = MyArray.GetAscendingNumbers(-7.8, 1.5, -4);
-
-			MyArray.CheckTheOperationOfTheMethod(numbersSumOfEvenDigitsGreater);
+			MyArray.CheckTheOperationOfTheMethod(arrayChange);
 
 //Two-dimensional arrays
 
@@ -151,7 +139,8 @@ namespace AllHomework
 			Console.WriteLine(maxIndexI);
 			Console.WriteLine(maxIndexJ);
 
-			//int numberOfElements = TwoDimensionalArrays.GetNumberOfArrayElements(copy);
+			int countOfElements = TwoDimensionalArrays.CountElementsHigherThanNeibor(copy);
+			Console.WriteLine(countOfElements);
 
 			TwoDimensionalArrays.CheckTheOperationOfTheMethod(copy);
 			Console.ReadLine();

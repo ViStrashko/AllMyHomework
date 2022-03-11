@@ -46,6 +46,10 @@ namespace AllHomework
 		}
 		public static int GetMinimumElementOfTheArray(int[,] numbers)
 		{
+			if (numbers.Length == 0)
+			{
+				throw new Exception("The value of the array must not be zero");
+			}
 			int[,] tmp = CopyArray(numbers);
 			int min;
 			min = tmp[0, 0];
@@ -63,6 +67,10 @@ namespace AllHomework
 		}
 		public static int GetMaximumElementOfTheArray(int[,] numbers)
 		{
+			if (numbers.Length == 0)
+			{
+				throw new Exception("The value of the array must not be zero");
+			}
 			int[,] tmp = CopyArray(numbers);
 			int max;
 			max = tmp[0, 0];
@@ -80,6 +88,10 @@ namespace AllHomework
 		}
 		public static void GetIndexMinimumElementOfTheArray(int[,] numbers, out int indexI, out int indexJ)
 		{
+			if (numbers.Length == 0)
+			{
+				throw new Exception("The value of the array must not be zero");
+			}
 			int[,] tmp = CopyArray(numbers);
 			int min;
 			min = tmp[0,0];
@@ -100,6 +112,10 @@ namespace AllHomework
 		}
 		public static void GetIndexMaximumElementOfTheArray(int[,] numbers, out int indexI, out int indexJ)
 		{
+			if (numbers.Length == 0)
+			{
+				throw new Exception("The value of the array must not be zero");
+			}
 			int[,] tmp = CopyArray(numbers);
 			int max;
 			max = tmp[0,0];
@@ -118,28 +134,25 @@ namespace AllHomework
 				}
 			}
 		}
-		/*public static int GetNumberOfArrayElements(int[,] numbers)
+		public static int CountElementsHigherThanNeibor(int[,] numbers)
 		{
 			int[,] tmp = CopyArray(numbers);
-			int sum;
-			sum = 0;
-			tmp[i, -1] = 0;
-			tmp[-1, j] = 0;
-			tmp[i, numbers.GetLength(1)] = 0;
-			tmp[numbers.GetLength(0), j] = 0;
-			Array.Copy()
-			for ( int i = 0; i < numbers.GetLength(0)-1; i++)
+			int count;
+			count = 0;
+			for (int i = 0; i < numbers.GetLength(0)-1; i++)
 			{
-				for ( int j = 0; j < numbers.GetLength(1)-1; j++)
+				for (int j = 0; j < numbers.GetLength(1)-1; j++)
 				{
-					if (tmp[i, j] > tmp[i, j+1] && tmp[i, j] > tmp[i+1, j] && tmp[i, j] > tmp[i, j-1] && tmp[i, j] > tmp[i - 1, j])
+					if (i == 0 || tmp[i, j] > tmp[i - 1, j]
+					   && i == numbers.GetLength(0) - 1 || tmp[i, j] > tmp[i + 1, j]
+					   && j == 0 || tmp[i, j - 1] > tmp[i - 1, j]
+						&& j == numbers.GetLength(0) - 1 || tmp[i, j] > tmp[i, j + 1])
 					{
-						sum++;
+						count++;
 					}
 				}
 			}
-			Console.Write("Количество элементов массива, которые больше своих соседей одновременно: ");
-			return sum;
+			return count;
 		}
-	*/}
+	}
 }

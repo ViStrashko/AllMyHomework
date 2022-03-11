@@ -25,19 +25,19 @@ namespace AllHomework
 			string tmp = " ";
 			if (coordinateX > 0 && coordinateY > 0)
 			{
-				tmp = "Точка с координатами X,Y принадлежит четверти: {1}";
+				tmp = "Точка с координатами X,Y принадлежит четверти: 1";
 			}
 			else if (coordinateX < 0 && coordinateY > 0)
 			{
-				tmp = "Точка с координатами X,Y принадлежит четверти: {2}";
+				tmp = "Точка с координатами X,Y принадлежит четверти: 2";
 			}
 			else if (coordinateX < 0 && coordinateY < 0)
 			{
-				tmp = "Точка с координатами X,Y принадлежит четверти: {3}";
+				tmp = "Точка с координатами X,Y принадлежит четверти: 3";
 			}
 			else if (coordinateX > 0 && coordinateY < 0)
 			{
-				tmp = "Точка с координатами X,Y принадлежит четверти: {4}";
+				tmp = "Точка с координатами X,Y принадлежит четверти: 4";
 			}
 			else if (coordinateX == 0 && coordinateY != 0)
 			{
@@ -180,51 +180,40 @@ namespace AllHomework
 			}
 			return tmp;
 		}
-		public static string GetAscendingNumbers(double valueA, double valueB, double valueC)
-		{
-			string tmp = " ";
-			if (valueA == valueB || valueA == valueC || valueB == valueC)
-			{
-				throw new Exception("The values of valueA, ValueB and ValueC should not be equal to each other, enter different values");
-			}
-			if (valueA < valueB && valueB < valueC)
-			{
-				tmp = $"{valueA}, {valueB}, {valueC}";
-			}
-			else if (valueA < valueC && valueC < valueB)
-			{
-				tmp = $"{valueA}, {valueC}, {valueB}";
-			}
-			else if (valueB < valueA && valueA < valueC)
-			{
-				tmp = $"{valueB}, {valueA}, {valueC}";
-			}
-			else if (valueB < valueC && valueC < valueA)
-			{
-				tmp = $"{valueB}, {valueC}, {valueA}";
-			}
-			else if (valueC < valueA && valueA < valueB)
-			{
-				tmp = $"{valueC}, {valueA}, {valueB}";
-			}
-			else if (valueC < valueB && valueB < valueA)
-			{
-				tmp = $"{valueC}, {valueB}, {valueA}";
-			}
-			return tmp;
-		}
 
 //Methods with two conclusions
 
-		public static void GetSolutionOfTheEquation(double valueA, double valueB, double valueC, out double x1, out double x2)
+		public static double[] GetAscendingNumbers(double valueA, double valueB, double valueC)
+		{
+			double[] result = new double[] { valueA, valueB, valueC };
+			double tmp;
+			for (int i = 0; i < result.Length; i++)
+			{
+				for (int j = i + 1; j < result.Length; j++)
+				{
+					if (result[i] > result[j])
+					{
+						tmp = result[i];
+						result[i] = result[j];
+						result[j] = tmp;
+					}
+				}
+			}
+			return result;
+		}
+		public static void GetSolutionOfTheEquation(double valueA, double valueB, double valueC, out double[] result, out string rezult)
 		{
 			if (valueA == 0 || valueB == 0)
 			{
 				throw new Exception("The ValueA value end ValueB value should not be zero, enter a different ValueA value end ValueB value");
 			}
+			double x1;
+			double x2;
+			double discriminant;
+			int targetIndex;
 			x1 = 0;
 			x2 = 0;
-			double discriminant;
+			rezult = "";
 			discriminant = valueB * valueB - (4 * valueA * valueC);
 			if (discriminant > 0)
 			{
@@ -233,12 +222,22 @@ namespace AllHomework
 			}
 			else if (discriminant == 0)
 			{
-				x1=(-valueB) / (2 * valueA);
+				x1 = (-valueB) / (2 * valueA);
 			}
 			else if (discriminant < 0)
 			{
-				Console.WriteLine($"Решение уравнения: Корней нет");
+				rezult = "Решение уравнения: Корней нет";
 			}
+			result = new double[] { x1, x2 };
+			targetIndex = 0;
+			for (int i = 0; i < result.Length; i++)
+			{
+				if (result[i] != 0)
+				{
+					result[targetIndex++] = result[i];
+				}
+			}
+			Array.Resize(ref result, targetIndex);
 		}
 	}
 }

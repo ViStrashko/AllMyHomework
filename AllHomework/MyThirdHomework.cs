@@ -198,30 +198,42 @@ namespace AllHomework
 			}
 			return countNumber;
 		}
-		public static long[] GetMirrorNumber(double number1)
+		public static string GetMirrorNumber(double number1)
 		{
 			if (number1 % 1 != 0)
 			{
 				throw new Exception("The value of number1 must be an integer");
 			}
-			int lenght;
-			long tmp;
 			long number = Convert.ToInt64(number1);
-			lenght = 0;
-			tmp = Math.Abs(number);
-			while (tmp !=0)
+			long tmp;
+			long numberMath;
+			string reversNumber = "";
+			numberMath = 0;
+			if (number == 0)
 			{
-				tmp = tmp / 10;
-				lenght++;
+				reversNumber = "0";
 			}
-			tmp = Math.Abs(number);
-			long[] revers = new long[lenght];
-			for (int i = 0; i < lenght; i++)
+			else if (number > 0)
 			{
-				revers[i] = tmp % 10;
-				tmp = tmp / 10;
+				while (number != 0)
+				{
+					tmp = number % 10;
+					number /= 10;
+					reversNumber += tmp;
+				}
 			}
-			return revers;
+			else if (number < 0)
+			{
+				numberMath = Math.Abs(number);
+				while (numberMath != 0)
+				{
+					tmp = numberMath % 10;
+					numberMath /= 10;
+					reversNumber += tmp;
+				}
+				reversNumber = "-" + reversNumber;
+			}
+			return reversNumber;
 		}
 		public static bool GetAlignmentOfDigitsOfNumbers(double number12, double number22)
 		{
@@ -257,35 +269,41 @@ namespace AllHomework
 
 //Methods with two conclusions
 
-		public static void GetNumbersAreMultiplesA(double valueA, out double i)
+		public static int[] GetNumbersAreMultiplesA(double valueAA)
 		{
-			if (valueA == 0)
+			if (valueAA == 0 || valueAA % 1 != 0)
 			{
-				throw new Exception("The ValueA value should not be zero, enter a different ValueA value");
+				throw new Exception("The valueA value must not be zero and must be an integer, enter another valueA value");
 			}
-			i = Math.Abs(valueA);
-			while (i < 1000)
+			int valueA = Convert.ToInt32(valueAA);
+			int[] temp = new int[1000 / Math.Abs(valueA)];
+			int i = Math.Abs(valueA);
+			for (int j = 0; i < 1000; j++)
 			{
-				Console.WriteLine(i);
+				temp[j] = i;
 				i += Math.Abs(valueA);
 			}
+			return temp;
 		}
-		public static void GetNumbersSumOfEvenDigitsGreater(double valueNN, out int i)
+		public static int[] GetNumbersSumOfEvenDigitsGreater(double valueNN)
 		{
 			if (valueNN <= 0 || valueNN % 1 != 0)
 			{
 				throw new Exception("If the value of the valueNN number is zero, the task does not make sense, the valueNN number must be an integer");
 			}
 			int valueN = Convert.ToInt32(valueNN);
+			int[] sourceArray = new int[valueN / 2];
 			int tmp;
 			int sumEvenNumber;
 			int sumOddNumber;
-			i = 1;
-			for ( ; i <= valueN; i++)
+			int targetIndex;
+			int x;
+			x = 0;
+			for (int i = 1; i <= valueN; i++)
 			{
 				if (i % 2 == 0 && i < 10)
 				{
-					Console.Write((i)+" ");
+					sourceArray[x++] = i;
 				}
 				else if (i >= 10)
 				{
@@ -307,10 +325,20 @@ namespace AllHomework
 					}
 					if (sumEvenNumber >= sumOddNumber)
 					{
-						Console.Write((i) + " ");
+						sourceArray[x++] = i;
 					}
 				}
 			}
+			targetIndex = 0;
+			for (int i = 0; i < sourceArray.Length; i++)
+			{
+				if (sourceArray[i] != 0)
+				{
+					sourceArray[targetIndex++] = sourceArray[i];
+				}
+			}
+			Array.Resize(ref sourceArray, targetIndex);
+			return sourceArray;
 		}
 	}
 }
