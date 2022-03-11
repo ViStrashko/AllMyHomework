@@ -13,16 +13,20 @@ namespace AllHomework
 			double valueX = MyFirstHomework.GetVariableOfTheEquation (7.1, -5.1, 40.1);
 			Console.WriteLine(valueX);
 
-			MyFirstHomework.GetEquationOfTheLine (1, -2.5, 15, 0);
+			string equation = MyFirstHomework.GetEquationOfTheLine (1, -2.5, 15, 0);
+			Console.WriteLine(equation);
 
 			double rezult1 = MySecondHomework.GetSumOrDifferenceOrProductOfNumbers(-7.4, 0);
 			Console.WriteLine(rezult1);
 
-			MySecondHomework.GetQuarterCoordinatesPoint(0, 0);
+			string quarters = MySecondHomework.GetQuarterCoordinatesPoint(0, 0);
+			Console.WriteLine(quarters);
 
-			MySecondHomework.GetTwodigitNumberInWords(25);
+			string numberInWords = MySecondHomework.GetTwodigitNumberInWords(25);
+			Console.WriteLine(numberInWords);
 
-			MySecondHomework.GetAscendingNumbers(10.8, 0, -5);
+			string ascendingNumbers = MySecondHomework.GetAscendingNumbers(10.8, 0, -5);
+			Console.WriteLine(ascendingNumbers);
 
 			double number = MyThirdHomework.GetNumberOfDegree(-2.5, -3);
 			Console.WriteLine(number);
@@ -48,7 +52,7 @@ namespace AllHomework
 			long oddNumbers = MyThirdHomework.GetNumberOfOddDigits(-710518555);
 			Console.WriteLine(oddNumbers);
 
-			MyThirdHomework.GetMirrorNumber(-123456789);
+			long[] reversNumber = MyThirdHomework.GetMirrorNumber(-11155577788555);
 
 			bool pitting = MyThirdHomework.GetAlignmentOfDigitsOfNumbers(-1234, -4217);
 			Console.WriteLine(pitting);
@@ -78,6 +82,7 @@ namespace AllHomework
 
 			int numbers1;
 			MyThirdHomework.GetNumbersSumOfEvenDigitsGreater(50, out numbers1);
+			Console.WriteLine(numbers1);
 
 //Arrays in methods
 
@@ -118,14 +123,14 @@ namespace AllHomework
 
 			double[] solutionOfTheEquation = MyArray.GetSolutionOfTheEquation(-2.1, 5.5, 3.1);
 
-			double[] ascendingNumbers = MyArray.GetAscendingNumbers(-7.8, 1.5, -4);
+			double[] ascendingNumbers2 = MyArray.GetAscendingNumbers(-7.8, 1.5, -4);
 
 			MyArray.CheckTheOperationOfTheMethod(numbersSumOfEvenDigitsGreater);
 
 //Two-dimensional arrays
 
 			int[,] randArray = TwoDimensionalArrays.GetRandomArray(5, 5);
-			int[,] array2 = new int[,] { { -1, -8, 5, -2, 3 }, { 2, 0, 10, -3, 4 }, { 1, 1, 3, -2, -5 }, { -2, 3, 8, -7, 0 }, { -5, 1, 9, 4, -2 } };
+			int[,] array2 = new int[,] { { -1, -8, 5, -2, 3 }, { 2, 0, 10, -3, 4 }, { 1, 1, 3, -2, -5 }, { -2, 3, 8, -7, 4 }, { -5, 1, 9, 4, -2 } };
 			int[,] copy = TwoDimensionalArrays.CopyArray(array2);
 
 			int minValueArray2 = TwoDimensionalArrays.GetMinimumElementOfTheArray(copy);
@@ -146,7 +151,9 @@ namespace AllHomework
 			Console.WriteLine(maxIndexI);
 			Console.WriteLine(maxIndexJ);
 
-			//TwoDimensionalArrays.CheckTheOperationOfTheMethod();
+			//int numberOfElements = TwoDimensionalArrays.GetNumberOfArrayElements(copy);
+
+			TwoDimensionalArrays.CheckTheOperationOfTheMethod(copy);
 			Console.ReadLine();
 		}
 	}

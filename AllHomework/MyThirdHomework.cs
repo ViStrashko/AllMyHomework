@@ -42,12 +42,12 @@ namespace AllHomework
 			{
 				throw new Exception("The valueA value must be greater than zero");
 			}
-			int i = 0;
+			int i = 1;
 			while (i * i < valueA)
 			{
 				i++;
 			}
-			return (i);
+			return (i-1);
 		}
 		public static int GetLargestDivisorOfNumber(double valueAA)
 		{
@@ -64,7 +64,6 @@ namespace AllHomework
 					break;
 				}
 			}
-			Console.Write($"Наибольший делитель числа {valueA}: ");
 			return i;
 		}
 		public static int GetSumNumbersDivisibleBy7(double valueAA, double valueBB)
@@ -199,26 +198,30 @@ namespace AllHomework
 			}
 			return countNumber;
 		}
-		public static void GetMirrorNumber(double number1)
+		public static long[] GetMirrorNumber(double number1)
 		{
 			if (number1 % 1 != 0)
 			{
 				throw new Exception("The value of number1 must be an integer");
 			}
+			int lenght;
+			long tmp;
 			long number = Convert.ToInt64(number1);
-			long tmp1;
-			long tmp2;
-			tmp2 = Math.Abs(number);
-			if (number == 0)
+			lenght = 0;
+			tmp = Math.Abs(number);
+			while (tmp !=0)
 			{
-				Console.Write(0);
+				tmp = tmp / 10;
+				lenght++;
 			}
-			while (tmp2 >= 1)
+			tmp = Math.Abs(number);
+			long[] revers = new long[lenght];
+			for (int i = 0; i < lenght; i++)
 			{
-				tmp1 = tmp2 % 10;
-				Console.Write(tmp1);
-				tmp2 = tmp2 / 10;
+				revers[i] = tmp % 10;
+				tmp = tmp / 10;
 			}
+			return revers;
 		}
 		public static bool GetAlignmentOfDigitsOfNumbers(double number12, double number22)
 		{

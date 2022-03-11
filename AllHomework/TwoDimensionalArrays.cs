@@ -35,6 +35,10 @@ namespace AllHomework
 			{
 				for (int j = 0; j < numbers.GetLength(1); j++)
 				{
+					if (numbers[i, j] >= 0 && numbers[i, j]<10)
+					{
+						Console.Write(" ");
+					}
 					Console.Write(numbers[i, j] + " ");
 				}
 				Console.WriteLine();
@@ -55,7 +59,6 @@ namespace AllHomework
 					}
 				}
 			}
-			Console.Write("\nМинимальное число массива: ");
 			return min;
 		}
 		public static int GetMaximumElementOfTheArray(int[,] numbers)
@@ -73,7 +76,6 @@ namespace AllHomework
 					}
 				}
 			}
-			Console.Write("Максимальное число массива: ");
 			return max;
 		}
 		public static void GetIndexMinimumElementOfTheArray(int[,] numbers, out int indexI, out int indexJ)
@@ -116,5 +118,28 @@ namespace AllHomework
 				}
 			}
 		}
-	}
+		/*public static int GetNumberOfArrayElements(int[,] numbers)
+		{
+			int[,] tmp = CopyArray(numbers);
+			int sum;
+			sum = 0;
+			tmp[i, -1] = 0;
+			tmp[-1, j] = 0;
+			tmp[i, numbers.GetLength(1)] = 0;
+			tmp[numbers.GetLength(0), j] = 0;
+			Array.Copy()
+			for ( int i = 0; i < numbers.GetLength(0)-1; i++)
+			{
+				for ( int j = 0; j < numbers.GetLength(1)-1; j++)
+				{
+					if (tmp[i, j] > tmp[i, j+1] && tmp[i, j] > tmp[i+1, j] && tmp[i, j] > tmp[i, j-1] && tmp[i, j] > tmp[i - 1, j])
+					{
+						sum++;
+					}
+				}
+			}
+			Console.Write("Количество элементов массива, которые больше своих соседей одновременно: ");
+			return sum;
+		}
+	*/}
 }

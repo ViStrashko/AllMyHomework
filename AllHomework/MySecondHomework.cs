@@ -20,189 +20,198 @@ namespace AllHomework
 			}
 			return result;
 		}
-		public static void GetQuarterCoordinatesPoint(double coordinateX, double coordinateY)
+		public static string GetQuarterCoordinatesPoint(double coordinateX, double coordinateY)
 		{
+			string tmp = " ";
 			if (coordinateX > 0 && coordinateY > 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: {1}");
+				tmp = "Точка с координатами X,Y принадлежит четверти: {1}";
 			}
 			else if (coordinateX < 0 && coordinateY > 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: {2}");
+				tmp = "Точка с координатами X,Y принадлежит четверти: {2}";
 			}
 			else if (coordinateX < 0 && coordinateY < 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: {3}");
+				tmp = "Точка с координатами X,Y принадлежит четверти: {3}";
 			}
 			else if (coordinateX > 0 && coordinateY < 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: {4}");
+				tmp = "Точка с координатами X,Y принадлежит четверти: {4}";
 			}
 			else if (coordinateX == 0 && coordinateY != 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: лежит на оси OY");
+				tmp = "Точка с координатами X,Y принадлежит четверти: лежит на оси OY";
 			}
 			else if (coordinateY == 0 && coordinateX != 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: лежит на оси OX");
+				tmp = "Точка с координатами X,Y принадлежит четверти: лежит на оси OX";
 			}
 			else if (coordinateX == 0 && coordinateY == 0)
 			{
-				Console.WriteLine($"Точка с координатами X,Y принадлежит четверти: является началом координат");
+				tmp = "Точка с координатами X,Y принадлежит четверти: является началом координат";
 			}
+			return tmp;
 		}
-		static int GetNumbersFromElevenToNineteen(int number)
+		static string GetNumbersFromElevenToNineteen(int number)
 		{
+			string tmp = " ";
 			switch (number)
 			{
 				case 11:
-					Console.WriteLine("одинадцать");
+					tmp = "одинадцать";
 				    break;
 				case 12:
-					Console.WriteLine("двенадцать");
+					tmp = "двенадцать";
 				    break;
 				case 13:
-					Console.WriteLine("тринадцать");
+					tmp = "тринадцать";
 				    break;
 				case 14:
-					Console.WriteLine("четырнадцать");
+					tmp = "четырнадцать";
 				    break;
 				case 15:
-					Console.WriteLine("пятнадцать");
+					tmp = "пятнадцать";
 				    break;
 				case 16:
-					Console.WriteLine("шеснадцать");
+					tmp = "шеснадцать";
 				    break;
 				case 17:
-					Console.WriteLine("семнадцать");
+					tmp = "семнадцать";
 				    break;
 				case 18:
-					Console.WriteLine("восемьнадцать");
+					tmp = "восемьнадцать";
 				    break;
 				case 19:
-					Console.WriteLine("девятнадцать");
+					tmp = "девятнадцать";
 				    break;
 			}
-			return number;
+			return tmp;
 		}
-		static int GetNumbersFromTwentyToNinetyNine(int number)
+		static string GetNumbersFromTwentyToNinetyNine(int number)
 		{
+			string tmp = " ";
 			switch (number / 10)
 			{
 				case 1:
-					Console.WriteLine("деcять");
+					tmp = "деcять";
 				    break;
 				case 2:
-					Console.Write("двадцать ");
+					tmp = "двадцать ";
 				    break;
 				case 3:
-					Console.Write("тридцать ");
+					tmp = "тридцать ";
 				    break;
 				case 4:
-					Console.Write("сорок ");
+					tmp = "сорок ";
 				    break;
 				case 5:
-					Console.Write("пятьдесят ");
+					tmp = "пятьдесят ";
 				    break;
 				case 6:
-					Console.Write("шестьдесят ");
+					tmp = "шестьдесят ";
 				    break;
 				case 7:
-					Console.Write("семьдесят ");
+					tmp = "семьдесят ";
 				    break;
 				case 8:
-					Console.Write("восемьдесят ");
+					tmp = "восемьдесят ";
 				    break;
 				case 9:
-					Console.Write("девяносто ");
+					tmp = "девяносто ";
 				    break;
 			}
-			return number;
+			return tmp;
 		}
-		static int GetNumbersFromOneToNine(int number)
+		static string GetNumbersFromOneToNine(int number)
 		{
+			string tmp = " ";
 			if (number % 10 >= 1)
 			{
 				switch (number % 10)
 				{
 					case 1:
-						Console.WriteLine("один");
+						tmp = "один";
 					    break;
 					case 2:
-						Console.WriteLine("два");
+						tmp = "два";
 					    break;
 					case 3:
-						Console.WriteLine("три");
+						tmp = "три";
 					    break;
 					case 4:
-						Console.WriteLine("четыре");
+						tmp = "четыре";
 					    break;
 					case 5:
-						Console.WriteLine("пять");
+						tmp = "пять";
 					    break;
 					case 6:
-						Console.WriteLine("шесть");
+						tmp = "шесть";
 					    break;
 					case 7:
-						Console.WriteLine("семь");
+						tmp = "семь";
 					    break;
 					case 8:
-						Console.WriteLine("восемь");
+						tmp = "восемь";
 					    break;
 					case 9:
-						Console.WriteLine("девять");
+						tmp = "девять";
 					    break;
 				}
 			}
-			return number;
+			return tmp;
 		}
-		public static void GetTwodigitNumberInWords(double number1)
+		public static string GetTwodigitNumberInWords(double number1)
 		{
 			if (number1 <= 9 || number1 >=100 || number1%1!=0)
 			{
 				throw new Exception("The input number1 must be two-digit, positive and integer");
 			}
 			int number = Convert.ToInt32(number1);
+			string tmp;
+
 			if (number > 10 && number < 20)
 			{
-				GetNumbersFromElevenToNineteen(number);
+				tmp = GetNumbersFromElevenToNineteen(number);
 			}
 			else
 			{
-				GetNumbersFromTwentyToNinetyNine(number);
-				GetNumbersFromOneToNine(number);
+				tmp = GetNumbersFromTwentyToNinetyNine(number) + GetNumbersFromOneToNine(number);
 			}
+			return tmp;
 		}
-		public static void GetAscendingNumbers(double valueA, double valueB, double valueC)
+		public static string GetAscendingNumbers(double valueA, double valueB, double valueC)
 		{
+			string tmp = " ";
 			if (valueA == valueB || valueA == valueC || valueB == valueC)
 			{
 				throw new Exception("The values of valueA, ValueB and ValueC should not be equal to each other, enter different values");
 			}
 			if (valueA < valueB && valueB < valueC)
 			{
-				Console.WriteLine($"{valueA}, {valueB}, {valueC}");
+				tmp = $"{valueA}, {valueB}, {valueC}";
 			}
 			else if (valueA < valueC && valueC < valueB)
 			{
-				Console.WriteLine($"{valueA}, {valueC}, {valueB}");
+				tmp = $"{valueA}, {valueC}, {valueB}";
 			}
 			else if (valueB < valueA && valueA < valueC)
 			{
-				Console.WriteLine($"{valueB}, {valueA}, {valueC}");
+				tmp = $"{valueB}, {valueA}, {valueC}";
 			}
 			else if (valueB < valueC && valueC < valueA)
 			{
-				Console.WriteLine($"{valueB}, {valueC}, {valueA}");
+				tmp = $"{valueB}, {valueC}, {valueA}";
 			}
 			else if (valueC < valueA && valueA < valueB)
 			{
-				Console.WriteLine($"{valueC}, {valueA}, {valueB}");
+				tmp = $"{valueC}, {valueA}, {valueB}";
 			}
 			else if (valueC < valueB && valueB < valueA)
 			{
-				Console.WriteLine($"{valueC}, {valueB}, {valueA}");
+				tmp = $"{valueC}, {valueB}, {valueA}";
 			}
+			return tmp;
 		}
 
 //Methods with two conclusions

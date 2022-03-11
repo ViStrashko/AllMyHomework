@@ -51,7 +51,6 @@ namespace AllHomework
 					min = tmp[i];
 				}
 			}
-			Console.Write("\nМинимальное число массива: ");
 			return min;
 		}
 		public static int GetMaximumElementOfTheArray(int[] numbers)
@@ -66,7 +65,6 @@ namespace AllHomework
 					max = tmp[i];
 				}
 			}
-			Console.Write("Максимальное число массива: ");
 			return max;
 		}
 		public static int GetIndexMinimumElementOfTheArray(int[] numbers)
@@ -84,7 +82,6 @@ namespace AllHomework
 					index = i;
 				}
 			}
-			Console.Write("Индекс минимального числа массива: ");
 			return index;
 		}
 		public static int GetIndexMaximumElementOfTheArray(int[] numbers)
@@ -102,7 +99,6 @@ namespace AllHomework
 					index = i;
 				}
 			}
-			Console.Write("Индекс максимального числа массива: ");
 			return index;
 		}
 		public static int GetSumOfElementsOddIndexOfTheArray(int[] numbers)
@@ -117,7 +113,6 @@ namespace AllHomework
 					sumElementsOddIndex += tmp[i];
 				}
 			}
-			Console.Write("Cумма элементов массива с нечетным индексом: ");
 			return sumElementsOddIndex;
 		}
 		public static int[] GetArrayReverse(int[] numbers)
@@ -143,7 +138,6 @@ namespace AllHomework
 					numberOddElements++;
 				}
 			}
-			Console.Write("Количество нечетных элементов массива: ");
 			return numberOddElements;
 		}
 		public static int[] SwapTheHalvesOfTheArray(int[] numbers)
