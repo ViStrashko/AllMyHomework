@@ -91,7 +91,7 @@ namespace AllHomework.Test
 		[TestCase(0, -5.5, -5.5)]
 		[TestCase(0, 0, -5.5)]
 		[TestCase(0, -5.5, 0)]
-		public void GetVariableOfTheEquationTest_WhenValueAIsNotZero_ShuoldThrowException(double valueA, double valueB, double valueC)
+		public void GetVariableOfTheEquationTest_WhenValueAIsNotEqualToZero_ShuoldThrowException(double valueA, double valueB, double valueC)
 		{
 			Assert.Throws<Exception>(() => MyFirstHomework.GetVariableOfTheEquation(valueA, valueB, valueC));
 		}
@@ -148,7 +148,7 @@ namespace AllHomework.Test
 		[TestCase(9, 0)]
 		[TestCase(0, 0)]
 		[TestCase(-9, 0)]
-		public void GetDividingNumbersEndRemainderOfTheDivisionTest_ValueBIsNotZero_ShuoldThrowException(int valueA, int valueB)
+		public void GetDividingNumbersEndRemainderOfTheDivisionTest_ValueBIsNotEqualToZero_ShuoldThrowException(int valueA, int valueB)
 		{
 			int rezultDividing;
 			int remainsDividing;
@@ -158,6 +158,7 @@ namespace AllHomework.Test
 
 		[TestCase("Hello", "Goodbye", "Goodbye", "Hello")]
 		[TestCase("555", "777", "777", "555")]
+		[TestCase("", "", "", "")]
 		public void GetReplacingContentTest(string stringA, string stringB, string expectedstringA, string expectedstringB)
 		{
 			MyFirstHomework.GetReplacingContent(ref stringA, ref stringB);

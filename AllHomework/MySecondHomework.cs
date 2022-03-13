@@ -1,7 +1,7 @@
 ﻿using System;
 namespace AllHomework
 {
-	static class MySecondHomework
+	public static class MySecondHomework
 	{
 		public static double GetSumOrDifferenceOrProductOfNumbers(double valueA, double valueB)
 		{
@@ -22,7 +22,7 @@ namespace AllHomework
 		}
 		public static string GetQuarterCoordinatesPoint(double coordinateX, double coordinateY)
 		{
-			string tmp = " ";
+			string tmp = "";
 			if (coordinateX > 0 && coordinateY > 0)
 			{
 				tmp = "Точка с координатами X,Y принадлежит четверти: 1";
@@ -55,7 +55,7 @@ namespace AllHomework
 		}
 		static string GetNumbersFromElevenToNineteen(int number)
 		{
-			string tmp = " ";
+			string tmp = "";
 			switch (number)
 			{
 				case 11:
@@ -90,11 +90,11 @@ namespace AllHomework
 		}
 		static string GetNumbersFromTwentyToNinetyNine(int number)
 		{
-			string tmp = " ";
+			string tmp = "";
 			switch (number / 10)
 			{
 				case 1:
-					tmp = "деcять";
+					tmp = "десять";
 				    break;
 				case 2:
 					tmp = "двадцать ";
@@ -125,7 +125,7 @@ namespace AllHomework
 		}
 		static string GetNumbersFromOneToNine(int number)
 		{
-			string tmp = " ";
+			string tmp = "";
 			if (number % 10 >= 1)
 			{
 				switch (number % 10)

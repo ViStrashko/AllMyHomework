@@ -29,7 +29,7 @@ namespace AllHomework
 			{
 				throw new Exception("The coordinateX1 value must not be equal to the coordinateX2 value, enter different coordinateX1 and coordinateX2 values");
 			}
-			string tmp = " ";
+			string tmp = "";
 			double valueA = (coordinateY2 - coordinateY1) / (coordinateX2 - coordinateX1);
 			double valueB = coordinateY1 - valueA * coordinateX1;
 			tmp =  $"Уравнение прямой: Y={valueA}*X+{valueB}";

@@ -26,6 +26,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="MyFirstHomeworkTests.cs" />
+    <Compile Include="MySecondHomeworkTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AllHomework\AllHomework.csproj">
