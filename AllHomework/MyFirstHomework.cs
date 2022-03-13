@@ -7,7 +7,7 @@ namespace AllHomework
 		{
 			if (valueA == valueB)
 			{
-				throw new Exception("The valueA value must not be equal to the ValueB value, enter different valueA and ValueB values");
+				throw new DivideByZeroException("The valueA value must not be equal to the ValueB value, enter different valueA and ValueB values");
 			}
 			double resultCalculations;
 			resultCalculations = ((5 * valueA) + (valueB * valueB)) / (valueB - valueA);
@@ -17,7 +17,7 @@ namespace AllHomework
 		{
 			if (valueA == 0)
 			{
-				throw new Exception("The ValueA value should not be zero, enter a different ValueA value");
+				throw new DivideByZeroException("The ValueA value should not be zero, enter a different ValueA value");
 			}
 			double valueX;
 			valueX = (valueC - valueB) / valueA;
@@ -27,7 +27,7 @@ namespace AllHomework
 		{
 			if (coordinateX1 == coordinateX2)
 			{
-				throw new Exception("The coordinateX1 value must not be equal to the coordinateX2 value, enter different coordinateX1 and coordinateX2 values");
+				throw new DivideByZeroException("The coordinateX1 value must not be equal to the coordinateX2 value, enter different coordinateX1 and coordinateX2 values");
 			}
 			string tmp = "";
 			double valueA = (coordinateY2 - coordinateY1) / (coordinateX2 - coordinateX1);
@@ -42,7 +42,7 @@ namespace AllHomework
 		{
 			if (valueB == 0)
 			{
-				throw new Exception("The ValueB value should not be zero, enter a different ValueB value");
+				throw new DivideByZeroException("The ValueB value should not be zero, enter a different ValueB value");
 			}
 			rezultDividing = valueA / valueB;
 			remainsDividing = valueA % valueB;

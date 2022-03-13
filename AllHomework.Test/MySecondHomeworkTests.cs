@@ -68,18 +68,18 @@ namespace AllHomework.Test
 
 		[TestCase(10, "десять")]
 		[TestCase(55, "пятьдесят пять")]
-		public void GetTwodigitNumberInWordsTest(double number1, string expected)
+		public void GetTwodigitNumberInWordsTest(double number, string expected)
 		{
-			string actual = MySecondHomework.GetTwodigitNumberInWords(number1);
+			string actual = MySecondHomework.GetTwodigitNumberInWords(number);
 			Assert.AreEqual(expected, actual);
 		}
 		[TestCase(5)]
 		[TestCase(100)]
 		[TestCase(55.5)]
 		[TestCase(0)]
-		public void GetTwodigitNumberInWordsTest_WhenNumber1IsNotTwoDigitInteger_ShuoldThrowException(double number1)
+		public void GetTwodigitNumberInWordsTest_WhenNumberIsTwoDigitInteger_ShuoldThrowException(double number)
 		{
-			Assert.Throws<Exception>(() => MySecondHomework.GetTwodigitNumberInWords(number1));
+			Assert.Throws<ArgumentException>(() => MySecondHomework.GetTwodigitNumberInWords(number));
 		}
 
 
@@ -125,11 +125,11 @@ namespace AllHomework.Test
 		[TestCase(0, -4.5, 2.5)]
 		[TestCase(0, 0, -2.5)]
 		[TestCase(0, 0, 0)]
-		public void GetSolutionOfTheEquationTest_valueAAndValueBIsNotEqualToZero_ShuoldThrowException(double valueA, double valueB, double valueC)
+		public void GetSolutionOfTheEquationTest_WhenValueAAndValueBIsNotEqualToZero_ShuoldThrowException(double valueA, double valueB, double valueC)
 		{
 			double[] solutionOfTheEquation;
 			string rezultOfTheEquation;
-			Assert.Throws<Exception>(() => MySecondHomework.GetSolutionOfTheEquation(valueA, valueB, valueC, out solutionOfTheEquation, out rezultOfTheEquation));
+			Assert.Throws<DivideByZeroException>(() => MySecondHomework.GetSolutionOfTheEquation(valueA, valueB, valueC, out solutionOfTheEquation, out rezultOfTheEquation));
 		}
 	}
 }

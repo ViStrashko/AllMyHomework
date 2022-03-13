@@ -165,7 +165,7 @@ namespace AllHomework
 		{
 			if (number1 <= 9 || number1 >=100 || number1%1!=0)
 			{
-				throw new Exception("The input number1 must be two-digit, positive and integer");
+				throw new ArgumentException("The input number1 must be two-digit, positive and integer");
 			}
 			int number = Convert.ToInt32(number1);
 			string tmp;
@@ -205,7 +205,7 @@ namespace AllHomework
 		{
 			if (valueA == 0 || valueB == 0)
 			{
-				throw new Exception("The ValueA value end ValueB value should not be zero, enter a different ValueA value end ValueB value");
+				throw new DivideByZeroException("The ValueA value end ValueB value should not be zero, enter a different ValueA value end ValueB value");
 			}
 			double x1;
 			double x2;

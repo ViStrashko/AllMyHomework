@@ -34,7 +34,7 @@ namespace AllHomework
 			int divisorOfNumber = MyThirdHomework.GetLargestDivisorOfNumber(-55);
 			Console.WriteLine(divisorOfNumber);
 			       
-			int sum = MyThirdHomework.GetSumNumbersDivisibleBy7(0, -10);
+			int sum = MyThirdHomework.GetSumNumbersDivisibleBySeven(0, -10);
 			Console.WriteLine(sum);
 
 			int numberFibonacci = MyThirdHomework.GetNumberFibonacciSeries(10);

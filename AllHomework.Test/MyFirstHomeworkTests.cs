@@ -42,7 +42,7 @@ namespace AllHomework.Test
 		[TestCase(-7.1, -7.1)]
 		public void GetResultOfTheEquationTest_WhenValueAIsNotEqualVaueB_ShuoldThrowException(double valueA, double valueB)
 		{
-			Assert.Throws<Exception>(() => MyFirstHomework.GetResultOfTheEquation(valueA, valueB));
+			Assert.Throws<DivideByZeroException>(() => MyFirstHomework.GetResultOfTheEquation(valueA, valueB));
 		}
 
 
@@ -93,7 +93,7 @@ namespace AllHomework.Test
 		[TestCase(0, -5.5, 0)]
 		public void GetVariableOfTheEquationTest_WhenValueAIsNotEqualToZero_ShuoldThrowException(double valueA, double valueB, double valueC)
 		{
-			Assert.Throws<Exception>(() => MyFirstHomework.GetVariableOfTheEquation(valueA, valueB, valueC));
+			Assert.Throws<DivideByZeroException>(() => MyFirstHomework.GetVariableOfTheEquation(valueA, valueB, valueC));
 		}
 
 
@@ -127,7 +127,7 @@ namespace AllHomework.Test
 		[TestCase(0, 0, 0, 4.5)]
 		public void GetEquationOfTheLineTest_WhenCoordinateX1IsNotEqualCoordinateX2_ShuoldThrowException(double coordinateX1, double coordinateX2, double coordinateY1, double coordinateY2)
 		{
-			Assert.Throws<Exception>(() => MyFirstHomework.GetEquationOfTheLine(coordinateX1, coordinateX2, coordinateY1, coordinateY2));
+			Assert.Throws<DivideByZeroException>(() => MyFirstHomework.GetEquationOfTheLine(coordinateX1, coordinateX2, coordinateY1, coordinateY2));
 		}
 
 
@@ -148,11 +148,11 @@ namespace AllHomework.Test
 		[TestCase(9, 0)]
 		[TestCase(0, 0)]
 		[TestCase(-9, 0)]
-		public void GetDividingNumbersEndRemainderOfTheDivisionTest_ValueBIsNotEqualToZero_ShuoldThrowException(int valueA, int valueB)
+		public void GetDividingNumbersEndRemainderOfTheDivisionTest_WhenValueBIsNotEqualToZero_ShuoldThrowException(int valueA, int valueB)
 		{
 			int rezultDividing;
 			int remainsDividing;
-			Assert.Throws<Exception>(() => MyFirstHomework.GetDividingNumbersEndRemainderOfTheDivision(valueA, valueB, out rezultDividing, out remainsDividing));
+			Assert.Throws<DivideByZeroException>(() => MyFirstHomework.GetDividingNumbersEndRemainderOfTheDivision(valueA, valueB, out rezultDividing, out remainsDividing));
 		}
 
 
