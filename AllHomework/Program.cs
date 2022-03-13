@@ -7,13 +7,13 @@ namespace AllHomework
 	{
 		public static void Main(string[] args)
 		{
-			double rezult=MyFirstHomework.GetResultOfTheEquation (-7.1, 4.5);
+			double rezult = MyFirstHomework.GetResultOfTheEquation(-7, 4);
 			Console.WriteLine(rezult);
 
 			double valueX = MyFirstHomework.GetVariableOfTheEquation (7.1, -5.1, 40.1);
 			Console.WriteLine(valueX);
 
-			string equation = MyFirstHomework.GetEquationOfTheLine (1, -2.5, 15, 0);
+			string equation = MyFirstHomework.GetEquationOfTheLine (7.5, -2, 0, 4.1);
 			Console.WriteLine(equation);
 
 			double rezult1 = MySecondHomework.GetSumOrDifferenceOrProductOfNumbers(-7.4, 0);
@@ -57,8 +57,8 @@ namespace AllHomework
 
 //Methods with two conclusions
 
-			double rezultDividing;
-			double remainsDividing;
+			int rezultDividing;
+			int remainsDividing;
 			MyFirstHomework.GetDividingNumbersEndRemainderOfTheDivision(9, 2, out rezultDividing, out remainsDividing);
 			Console.WriteLine(rezultDividing);
 			Console.WriteLine(remainsDividing);

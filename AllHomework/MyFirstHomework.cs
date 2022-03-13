@@ -1,7 +1,7 @@
 ﻿using System;
 namespace AllHomework
 {
-	static class MyFirstHomework
+	public static class MyFirstHomework
 	{
 		public static double GetResultOfTheEquation(double valueA, double valueB)
 		{
@@ -38,7 +38,7 @@ namespace AllHomework
 
 //Methods with two conclusions
 
-		public static void GetDividingNumbersEndRemainderOfTheDivision(double valueA, double valueB, out double rezultDividing, out double remainsDividing)
+		public static void GetDividingNumbersEndRemainderOfTheDivision(int valueA, int valueB, out int rezultDividing, out int remainsDividing)
 		{
 			if (valueB == 0)
 			{
