@@ -44,7 +44,10 @@ namespace AllHomework.Test
 		}
 
 
-		[TestCase(1, 0)]
+		[TestCase(2, 1)]
+		[TestCase(0, 0)]
+		[TestCase(-5, 0)]
+		[TestCase(-10.5, 0)]
 		[TestCase(9, 2)]
 		[TestCase(10, 3)]
 		[TestCase(15.5, 3)]
@@ -53,19 +56,14 @@ namespace AllHomework.Test
 			double actual = MyThirdHomework.GetQuantityNumbersSmallerSquare(valueA);
 			Assert.AreEqual(expected, actual);
 		}
-		[TestCase(0)]
-		[TestCase(-1)]
-		[TestCase(-1.5)]
-		public void GetQuantityNumbersSmallerSquareTest_WhenValueAIsPositiveInteger_ShuoldThrowException(double valueA)
-		{
-			Assert.Throws<ArgumentException>(() => MyThirdHomework.GetQuantityNumbersSmallerSquare(valueA));
-		}
 
 
 		[TestCase(5, 1)]
 		[TestCase(8, 4)]
 		[TestCase(-5, 1)]
 		[TestCase(-8, 4)]
+		[TestCase(-20, 10)]
+		[TestCase(90, 45)]
 		public void GetLargestDivisorOfNumberTest(double valueA, int expected)
 		{
 			int actual = MyThirdHomework.GetLargestDivisorOfNumber(valueA);
@@ -80,6 +78,10 @@ namespace AllHomework.Test
 		}
 
 
+		[TestCase(13, 8, 0)]
+		[TestCase(7, 7, 7)]
+		[TestCase(-8, 7, 0)]
+		[TestCase(0, 0, 0)]
 		[TestCase(0, 15, 21)]
 		[TestCase(0, -15, -21)]
 		[TestCase(8, -18, -14)]
@@ -114,6 +116,9 @@ namespace AllHomework.Test
 		}
 
 
+		[TestCase(1, 1, 1)]
+		[TestCase(2, 4, 2)]
+		[TestCase(12, -16, 4)]
 		[TestCase(25, 30, 5)]
 		[TestCase(-45, -15, 15)]
 		public void GetGreatestCommonDivisorNumbersTest(double valueA, double valueB, int expected)
@@ -130,12 +135,17 @@ namespace AllHomework.Test
 		}
 
 
+		[TestCase(1, 1)]
 		[TestCase(8, 2)]
-		[TestCase(15, 2.4609375)]
+		[TestCase(15, 2.5)]
+		[TestCase(27, 3)]
+		[TestCase(50, 3.6)]
+		[TestCase(64, 4)]
+		[TestCase(125, 5)]
 		public void GetNumberMethodOfHalfDivisionTest(double number, double expected)
 		{
 			double actual = MyThirdHomework.GetNumberMethodOfHalfDivision(number);
-			Assert.AreEqual(expected, actual);
+			Assert.AreEqual(expected, actual, 0.1);
 		}
 		[TestCase(0)]
 		[TestCase(9.8)]
@@ -164,6 +174,9 @@ namespace AllHomework.Test
 
 
 		[TestCase(0, "0")]
+		[TestCase(1000, "1")]
+		[TestCase(-1000, "-1")]
+		[TestCase(5, "5")]
 		[TestCase(12345, "54321")]
 		[TestCase(-12345, "-54321")]
 		public void GetMirrorNumberTest(double number, string expected)
@@ -179,28 +192,33 @@ namespace AllHomework.Test
 		}
 
 
-		[TestCase(5038, 10, true)]
-		[TestCase(5038, -3, true)]
-		[TestCase(51358, 5, true)]
-		[TestCase(51358, 53, true)]
-		[TestCase(-51358, -563, true)]
+		[TestCase(1, 21, true)]
+		[TestCase(4, 540, true)]
+		[TestCase(0, 0, true)]
+		[TestCase(-10, 203, true)]
+		[TestCase(20, 510, true)]
+		[TestCase(-20, 0, true)]
+		[TestCase(214, 103, true)]
+		[TestCase(-4, 2, false)]
+		[TestCase(0, 2, false)]
+		[TestCase(4, 0, false)]
 		public void GetAlignmentOfDigitsOfNumbersTest(double number1, double number2, bool expected)
 		{
 			bool actual = MyThirdHomework.GetAlignmentOfDigitsOfNumbers(number1, number2);
 			Assert.AreEqual(expected, actual);
 		}
-		[TestCase(0, 0)]
-		[TestCase(50, 0)]
-		[TestCase(0, -50)]
 		[TestCase(5.5, 15.8)]
+		[TestCase(-5.5, -15.8)]
 		public void GetAlignmentOfDigitsOfNumbersTest_WhenNumber1AndNumber2IsIntegerAndIsNotEquelZero_ShuoldThrowException(double number1, double number2)
 		{
 			Assert.Throws<ArgumentException>(() => MyThirdHomework.GetAlignmentOfDigitsOfNumbers(number1, number2));
 		}
 
 
-		[TestCase(-100, new int[] { 100, 200, 300, 400, 500, 600, 700, 800, 900 })]
+		[TestCase(-100, new int[] { 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000 })]
 		[TestCase(300, new int[] { 300, 600, 900 })]
+		[TestCase(600, new int[] { 600 })]
+		[TestCase(500, new int[] { 500, 1000 })]
 		public void GetNumbersAreMultiplesATest(double valueA, int[] expected)
 		{
 			int[] actual = MyThirdHomework.GetNumbersAreMultiplesA(valueA);
@@ -216,6 +234,8 @@ namespace AllHomework.Test
 
 		[TestCase(8, new int[] { 2, 4, 6, 8 })]
 		[TestCase(25, new int[] { 2, 4, 6, 8, 12, 14, 16, 18, 20, 21, 22, 24 })]
+		[TestCase(2, new int[] { 2 })]
+		[TestCase(1, new int[] { })]
 		public void GetNumbersSumOfEvenDigitsGreaterTest(double valueN, int[] expected)
 		{
 			int[] actual = MyThirdHomework.GetNumbersSumOfEvenDigitsGreater(valueN);
@@ -225,7 +245,7 @@ namespace AllHomework.Test
 		[TestCase(100.5)]
 		[TestCase(-14)]
 		[TestCase(-50.5)]
-		public void GetNumbersAreMultiplesATest_WhenValueNIsIntegerAndIsNotEquelZero_ShuoldThrowException(double valueN)
+		public void GetNumbersAreMultiplesATest_WhenValueNIsIntegerAndIsGreaterThanZero_ShuoldThrowException(double valueN)
 		{
 			Assert.Throws<ArgumentException>(() => MyThirdHomework.GetNumbersSumOfEvenDigitsGreater(valueN));
 		}

@@ -38,10 +38,6 @@ namespace AllHomework
 		}
 		public static double GetQuantityNumbersSmallerSquare(double valueA)
 		{
-			if (valueA <= 0)
-			{
-				throw new ArgumentException("The valueA value must be greater than zero");
-			}
 			int i = 1;
 			while (i * i < valueA)
 			{
@@ -77,8 +73,8 @@ namespace AllHomework
 			int sum = 0;
 			int tmp1 = 0;
 			int tmp2 = 0;
-			if (valueA < valueB) { tmp1 = valueA; tmp2 = valueB; }
-			else if (valueA > valueB) { tmp1 = valueB; tmp2 = valueA; }
+			if (valueA <= valueB) { tmp1 = valueA; tmp2 = valueB; }
+			else if (valueA >= valueB) { tmp1 = valueB; tmp2 = valueA; }
 			for (int i = tmp1; i <= tmp2; i++)
 			{
 				if (i % 7 == 0)
@@ -161,17 +157,24 @@ namespace AllHomework
 			double e = 0.01;
 			double leftNumber = 0;
 			double rightNumber;
-			rightNumber = number;
-			while ((F(leftNumber + e) <= number && F(rightNumber - e) >= number))
+			if (Math.Pow(number, 1.0 / 3.0) % 1 == 0)
 			{
-				tmp = (leftNumber + rightNumber) / 2;
-				if (F(tmp) > number)
+				tmp = Math.Pow(number, 1.0 / 3.0);
+			}
+			else
+			{
+				rightNumber = number;
+				while ((F(leftNumber + e) <= number && F(rightNumber - e) >= number))
 				{
-					rightNumber = tmp;
-				}
-				else
-				{
-					leftNumber = tmp;
+					tmp = (leftNumber + rightNumber) / 2;
+					if (F(tmp) > number)
+					{
+						rightNumber = tmp;
+					}
+					else
+					{
+						leftNumber = tmp;
+					}
 				}
 			}
 			return tmp;
@@ -205,66 +208,86 @@ namespace AllHomework
 				throw new ArgumentException("The value of number1 must be an integer");
 			}
 			long number = Convert.ToInt64(number1);
-			long tmp;
+			string revers;
+			long reversNumber;
 			long numberMath;
-			string reversNumber = "";
+			revers = "";
+			reversNumber = 0;
 			numberMath = 0;
 			if (number == 0)
 			{
-				reversNumber = "0";
+				revers = Convert.ToString(reversNumber);
 			}
 			else if (number > 0)
 			{
 				while (number != 0)
 				{
-					tmp = number % 10;
-					number /= 10;
-					reversNumber += tmp;
+					reversNumber = reversNumber * 10;
+					reversNumber = reversNumber + number % 10;
+					number = number / 10;
 				}
+				revers = Convert.ToString(reversNumber);
 			}
 			else if (number < 0)
 			{
 				numberMath = Math.Abs(number);
 				while (numberMath != 0)
 				{
-					tmp = numberMath % 10;
-					numberMath /= 10;
-					reversNumber += tmp;
+					reversNumber = reversNumber * 10;
+					reversNumber = reversNumber + numberMath % 10;
+					numberMath = numberMath / 10;
 				}
-				reversNumber = "-" + reversNumber;
+				revers = "-" + Convert.ToString(reversNumber);
 			}
-			return reversNumber;
+			return revers;
 		}
 		public static bool GetAlignmentOfDigitsOfNumbers(double number12, double number22)
 		{
-			if (number12 == 0 || number22 == 0 || number12 % 1 != 0 || number22 % 1 != 0)
+			if (number12 % 1 != 0 || number22 % 1 != 0)
 			{
 				throw new ArgumentException("If the values of number12 and number22 are zero, the task does not make sense, the numbers number12 and number22 must be integers");
 			}
+			int tmp;
 			int number1 = Convert.ToInt32(number12);
 			int number2 = Convert.ToInt32(number22);
-			int tmp1;
-			int tmp2;
-			int tmp3;
-			int secondNumber;
-			bool isEqualNumner = false;;
-			tmp3 = Math.Abs(number1);
-			while (tmp3 >= 1)
+			bool isEqualNumner = false;
+			if (number1 == number2)
 			{
-				tmp1 = tmp3 % 10;
-				secondNumber = Math.Abs(number2);
-				while (secondNumber >= 1)
+				isEqualNumner = true;
+			}
+			if (number1 == 0)
+			{
+				for (int i = number2; i != 0; i /= 10)
 				{
-					tmp2 = secondNumber % 10;
-					if (tmp1 == tmp2)
+					if (i % 10 == 0)
 					{
 						isEqualNumner = true;
 					}
-					secondNumber = secondNumber / 10;
 				}
-				tmp3 = tmp3 / 10;
 			}
-				return isEqualNumner;
+			if (number2 == 0)
+			{
+				for (int i = number1; i != 0; i /= 10)
+				{
+					if (i % 10 == 0)
+					{
+						isEqualNumner = true;
+					}
+				}
+			}
+			while (number1 != 0)
+			{
+				tmp = number1 % 10;
+				for (int i = number2; i != 0; i /= 10)
+				{
+					if (tmp == i % 10)
+					{
+						isEqualNumner = true;
+					}
+				}
+				number1 /= 10;
+			}
+			return isEqualNumner;
 		}
 
 //Methods with two conclusions
@@ -279,7 +302,7 @@ namespace AllHomework
 			int valueA = Convert.ToInt32(valueAA);
 			int[] temp = new int[1000 / Math.Abs(valueA)];
 			int i = Math.Abs(valueA);
-			for (int j = 0; i < 1000; j++)
+			for (int j = 0; i <= 1000; j++)
 			{
 				temp[j] = i;
 				i += Math.Abs(valueA);
