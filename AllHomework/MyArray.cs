@@ -1,7 +1,7 @@
 ﻿using System;
 namespace AllHomework
 {
-	static class MyArray
+	public static class MyArray
 	{
 		public static int[] GetRandomArray(uint length)
 		{
@@ -43,7 +43,7 @@ namespace AllHomework
 		{
 			if (numbers.Length == 0)
 			{
-				throw new Exception("The value of the array must not be zero");
+				throw new ArgumentException("The value of the array must not be zero");
 			}
 			int[] tmp = CopyArray(numbers);
 			int min;
@@ -61,7 +61,7 @@ namespace AllHomework
 		{
 			if (numbers.Length == 0)
 			{
-				throw new Exception("The value of the array must not be zero");
+				throw new ArgumentException("The value of the array must not be zero");
 			}
 			int[] tmp = CopyArray(numbers);
 			int max;
@@ -79,7 +79,7 @@ namespace AllHomework
 		{
 			if (numbers.Length == 0)
 			{
-				throw new Exception("The value of the array must not be zero");
+				throw new ArgumentException("The value of the array must not be zero");
 			}
 			int[] tmp = CopyArray(numbers);
 			int min;
@@ -100,7 +100,7 @@ namespace AllHomework
 		{
 			if (numbers.Length == 0)
 			{
-				throw new Exception("The value of the array must not be zero");
+				throw new ArgumentException("The value of the array must not be zero");
 			}
 			int[] tmp = CopyArray(numbers);
 			int max;
