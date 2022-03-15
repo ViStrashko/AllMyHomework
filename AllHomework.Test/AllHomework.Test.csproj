@@ -29,6 +29,9 @@
     <Compile Include="MySecondHomeworkTests.cs" />
     <Compile Include="MyThirdHomeworkTests.cs" />
     <Compile Include="MyArrayTests.cs" />
+    <Compile Include="TwoDimensionalArraysTests.cs" />
+    <Compile Include="TwoDimensionalArraysMock.cs" />
+    <Compile Include="Enums.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AllHomework\AllHomework.csproj">

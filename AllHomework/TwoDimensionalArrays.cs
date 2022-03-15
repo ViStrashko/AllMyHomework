@@ -1,7 +1,7 @@
 ﻿using System;
 namespace AllHomework
 {
-	static class TwoDimensionalArrays
+	public static class TwoDimensionalArrays
 	{
 		public static int[,] GetRandomArray(int valueA, int valueB)
 		{
@@ -48,14 +48,14 @@ namespace AllHomework
 		{
 			if (numbers.Length == 0)
 			{
-				throw new Exception("The value of the array must not be zero");
+				throw new ArgumentException("The value of the array must not be zero");
 			}
 			int[,] tmp = CopyArray(numbers);
 			int min;
 			min = tmp[0, 0];
 			for (int i = 0; i < numbers.GetLength(0); i++)
 			{
-				for (int j = 1; j < numbers.GetLength(1); j++)
+				for (int j = 0; j < numbers.GetLength(1); j++)
 				{
 					if (tmp[i, j] < min)
 					{
@@ -69,14 +69,14 @@ namespace AllHomework
 		{
 			if (numbers.Length == 0)
 			{
-				throw new Exception("The value of the array must not be zero");
+				throw new ArgumentException("The value of the array must not be zero");
 			}
 			int[,] tmp = CopyArray(numbers);
 			int max;
 			max = tmp[0, 0];
 			for (int i = 0; i < numbers.GetLength(0); i++)
 			{
-				for (int j = 1; j < numbers.GetLength(1); j++)
+				for (int j = 0; j < numbers.GetLength(1); j++)
 				{
 					if (tmp[i, j] > max)
 					{
@@ -90,7 +90,7 @@ namespace AllHomework
 		{
 			if (numbers.Length == 0)
 			{
-				throw new Exception("The value of the array must not be zero");
+				throw new ArgumentException("The value of the array must not be zero");
 			}
 			int[,] tmp = CopyArray(numbers);
 			int min;
@@ -99,7 +99,7 @@ namespace AllHomework
 			indexJ = 0;
 			for (int i = 0; i < numbers.GetLength(0); i++)
 			{
-				for (int j = 1; j < numbers.GetLength(1); j++)
+				for (int j = 0; j < numbers.GetLength(1); j++)
 				{
 					if (tmp[i, j] < min)
 					{
@@ -114,7 +114,7 @@ namespace AllHomework
 		{
 			if (numbers.Length == 0)
 			{
-				throw new Exception("The value of the array must not be zero");
+				throw new ArgumentException("The value of the array must not be zero");
 			}
 			int[,] tmp = CopyArray(numbers);
 			int max;
@@ -123,7 +123,7 @@ namespace AllHomework
 			indexJ = 0;
 			for (int i = 0; i < numbers.GetLength(0); i++)
 			{
-				for (int j = 1; j < numbers.GetLength(1); j++)
+				for (int j = 0; j < numbers.GetLength(1); j++)
 				{
 					if (tmp[i,j] > max)
 					{
@@ -139,20 +139,38 @@ namespace AllHomework
 			int[,] tmp = CopyArray(numbers);
 			int count;
 			count = 0;
-			for (int i = 0; i < numbers.GetLength(0)-1; i++)
+			for (int i = 0; i < tmp.GetLength(0); i++)
 			{
-				for (int j = 0; j < numbers.GetLength(1)-1; j++)
+				for (int j = 0; j < tmp.GetLength(1); j++)
 				{
-					if (i == 0 || tmp[i, j] > tmp[i - 1, j]
-					   && i == numbers.GetLength(0) - 1 || tmp[i, j] > tmp[i + 1, j]
-					   && j == 0 || tmp[i, j - 1] > tmp[i - 1, j]
-						&& j == numbers.GetLength(0) - 1 || tmp[i, j] > tmp[i, j + 1])
+					if ((i == 0 || tmp[i, j] > tmp[i - 1, j])
+						&& (i == tmp.GetLength(0) - 1 || tmp[i, j] > tmp[i + 1, j])
+						&& (j == 0 || tmp[i, j] > tmp[i, j - 1])
+						&& (j == tmp.GetLength(1) - 1 || tmp[i, j] > tmp[i, j + 1]))
 					{
 						count++;
 					}
 				}
 			}
 			return count;
+		}
+		public static int[,] ReflectTheArrayRelativeToItsMainDiagonal(int[,] numbers)
+		{
+			int[,] tmp = CopyArray(numbers);
+			int temp;
+			for (int i = 0; i < numbers.GetLength(0); i++)
+			{
+				for (int j = i; j < numbers.GetLength(1); j++)
+				{
+					if (i!=j)
+					{
+						temp = tmp[i, j];
+						tmp[i, j] = tmp[j, i];
+						tmp[j, i] = temp;
+					}
+				}
+			}
+			return tmp;
 		}
 	}
 }

@@ -142,7 +142,9 @@ namespace AllHomework
 			int countOfElements = TwoDimensionalArrays.CountElementsHigherThanNeibor(copy);
 			Console.WriteLine(countOfElements);
 
-			TwoDimensionalArrays.CheckTheOperationOfTheMethod(copy);
+			int[,] reflectTheArray = TwoDimensionalArrays.ReflectTheArrayRelativeToItsMainDiagonal(copy);
+
+			TwoDimensionalArrays.CheckTheOperationOfTheMethod(reflectTheArray);
 			Console.ReadLine();
 		}
 	}
